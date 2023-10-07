@@ -1,0 +1,16 @@
+C:\Users\user\Desktop\pasori\pasori\bin\Debug\pasori.exe.config
+C:\Users\user\Desktop\pasori\pasori\bin\Debug\pasori.exe
+C:\Users\user\Desktop\pasori\pasori\bin\Debug\pasori.pdb
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.endPage.resources
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.getWitnessInformation.resources
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.startPage.resources
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.getCheckerInformation.resources
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.healthCheck.resources
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.Properties.Resources.resources
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.csproj.GenerateResource.cache
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.exe
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.pdb
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.Form1.resources
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.white.resources

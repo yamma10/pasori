@@ -15,7 +15,22 @@ namespace pasori
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Status data = new Status();
+
+            //音楽テスト
+            //Application.Run(new Form1());
+
+            Application.Run(new startPage(ref data));
+            Application.Run(new getCheckerInformation(ref data));
+            
+            //最初のページでアルコール反応が出ていたら終わり
+            if(data.propertyAlcoholFlag)
+            {
+                Application.Run(new endPage(ref data));
+            } else
+            {
+                
+            }
         }
     }
 }

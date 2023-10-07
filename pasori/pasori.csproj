@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>pasori</RootNamespace>
     <AssemblyName>pasori</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,8 +32,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,23 +49,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api.cs" />
+    <Compile Include="const_Util.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="white.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="white.Designer.cs">
+      <DependentUpon>white.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interaction_Access.cs" />
+    <Compile Include="const_PCSC.cs" />
+    <Compile Include="endPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="endPage.Designer.cs">
+      <DependentUpon>endPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="getWitnessInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getWitnessInformation.Designer.cs">
+      <DependentUpon>getWitnessInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="healthCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="healthCheck.Designer.cs">
+      <DependentUpon>healthCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="status.cs" />
+    <Compile Include="startPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="startPage.Designer.cs">
+      <DependentUpon>startPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getCheckerInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getCheckerInformation.Designer.cs">
+      <DependentUpon>getCheckerInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="endPage.resx">
+      <DependentUpon>endPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getWitnessInformation.resx">
+      <DependentUpon>getWitnessInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="startPage.resx">
+      <DependentUpon>startPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getCheckerInformation.resx">
+      <DependentUpon>getCheckerInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="healthCheck.resx">
+      <DependentUpon>healthCheck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="white.resx">
+      <DependentUpon>white.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -70,5 +141,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="asset\coin.wav" />
+    <None Include="asset\damn.wav" />
+    <Content Include="music\coin.wav" />
+    <Content Include="music\damn.wav" />
+    <Content Include="PCSC.txt" />
+    <Content Include="sql\getNameFromCardId.txt" />
+    <Content Include="sql\test.txt" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
