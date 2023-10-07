@@ -31,6 +31,8 @@ namespace pasori
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.eventLog1 = new System.Diagnostics.EventLog();
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,6 +55,11 @@ namespace pasori
             this.label2.TabIndex = 1;
             this.label2.Text = "※立会人が行って下さい";
             // 
+            // eventLog1
+            // 
+            this.eventLog1.SynchronizingObject = this;
+            this.eventLog1.EntryWritten += new System.Diagnostics.EntryWrittenEventHandler(this.eventLog1_EntryWritten);
+            // 
             // healthCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -64,6 +71,8 @@ namespace pasori
             this.Name = "healthCheck";
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.healthCheck_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,5 +82,6 @@ namespace pasori
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Diagnostics.EventLog eventLog1;
     }
 }

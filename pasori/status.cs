@@ -7,22 +7,49 @@ namespace pasori
 {
     public  class Status
     {
+        //車のナンバー
+        private string carNumber;
+        //本人の職員ｺｰﾄﾞ
+        private string code;
+        //本人の名前
+        private string name;
+
         //運転前か後か　後ならフラグ
-        private static Boolean driveStatus;
+        private Boolean driveStatus;
         //アルコール反応ありか、ありならフラグ
-        private static Boolean alcoholFlag;
+        private Boolean alcoholFlag;
         //チェックする人の電子錠ID
         private static string checkerId;
-        //立会人の電子錠ID
-        string witnessId;
         //チェック方法
-        string checkMethod;
+        private string checkMethod;
         //顔色　悪い場合フラグを立てる
-        Boolean complexion;
+        private Boolean complexion;
         //体調　悪い場合フラグを立てる
-        Boolean physicalCondition;
+        private Boolean physicalCondition;
+        //コメント　
+        private string comment;
+
         //立会人の患者コード
-        int code;
+        private string witnesscode;
+        //立会人の名前
+        private string witnessName;
+
+        public string propertyCarNumbrer
+        {
+            set { carNumber = value; }
+            get { return carNumber; }
+        }
+
+        public string propertyCode
+        {
+            set { code = value; }
+            get { return code; }
+        }
+        public string propertyName
+        {
+            set { name = value; }
+            get { return name; }
+        }
 
         public Boolean propertyDriveStatus
         {
@@ -39,12 +66,6 @@ namespace pasori
         {
             set { checkerId = value; }
             get { return checkerId; }
-        }
-
-        public string propertyWitnessId
-        {
-            set { witnessId = value; }
-            get { return witnessId; }
         }
 
         public string propertyCheckMethod
@@ -65,12 +86,17 @@ namespace pasori
             get { return physicalCondition; }
         }
 
-        public int propertyCode
+        public string propertyWitnessCode
         {
-            set { code = value; }
-            get { return code; }
+            set { witnesscode = value; }
+            get { return witnesscode; }
         }
-
+        
+        public string propertyWitnessName
+        {
+            set { witnessName = value; }
+            get { return witnessName; }
+        }
     }
 
 

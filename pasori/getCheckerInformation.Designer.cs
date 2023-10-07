@@ -54,6 +54,7 @@ namespace pasori
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.getCheckerInformation_Load);
+            this.Shown += new System.EventHandler(this.getCheckerInformation_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

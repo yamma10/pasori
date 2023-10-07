@@ -11,9 +11,16 @@ namespace pasori
 {
     public partial class endPage : Form
     {
-        public endPage()
+        Status data;
+        public endPage(ref Status d)
         {
             InitializeComponent();
+            data = d;
+        }
+
+        private void endPage_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

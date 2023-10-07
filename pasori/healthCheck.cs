@@ -15,5 +15,15 @@ namespace pasori
         {
             InitializeComponent();
         }
+
+        private void eventLog1_EntryWritten(object sender, System.Diagnostics.EntryWrittenEventArgs e)
+        {
+
+        }
+
+        private void healthCheck_Shown(object sender, EventArgs e)
+        {
+
+        }
     }
 }

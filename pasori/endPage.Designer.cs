@@ -51,6 +51,7 @@ namespace pasori
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "endPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.endPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -21,12 +21,15 @@ namespace pasori
             //Application.Run(new Form1());
 
             Application.Run(new startPage(ref data));
-
             Application.Run(new getCheckerInformation(ref data));
-
-            if (data.propertyAlcoholFlag)
+            
+            //最初のページでアルコール反応が出ていたら終わり
+            if(data.propertyAlcoholFlag)
             {
-
+                Application.Run(new endPage(ref data));
+            } else
+            {
+                
             }
         }
     }
