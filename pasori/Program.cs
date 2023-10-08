@@ -13,24 +13,33 @@ namespace pasori
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Status data = new Status();
-
-            //音楽テスト
-            //Application.Run(new Form1());
-
-            Application.Run(new startPage(ref data));
-            Application.Run(new getCheckerInformation(ref data));
-            
-            //最初のページでアルコール反応が出ていたら終わり
-            if(data.propertyAlcoholFlag)
+            while(true)
             {
-                Application.Run(new endPage(ref data));
-            } else
-            {
-                
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Status data = new Status();
+
+                Application.Run(new mainForm(ref data));
+
+                //音楽テスト
+                //Application.Run(new Form1());
+
+                Application.Run(new startPage(ref data));
+                Application.Run(new getCheckerInformation(ref data));
+
+                //最初のページでアルコール反応が出ていたら終わり
+                if (data.propertyAlcoholFlag)
+                {
+                    Application.Run(new endPage(ref data));
+                    continue;
+                }
+
+                Application.Run(new healthCheck(ref data));
+
+                Application.Run(new getWitnessInformation(ref data));
+
             }
+            
         }
     }
 }

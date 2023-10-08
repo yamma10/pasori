@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -50,17 +51,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api.cs" />
+    <Compile Include="Car.cs" />
     <Compile Include="const_Util.cs" />
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="white.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="white.Designer.cs">
-      <DependentUpon>white.cs</DependentUpon>
     </Compile>
     <Compile Include="interaction_Access.cs" />
     <Compile Include="const_PCSC.cs" />
@@ -112,6 +114,9 @@
     <EmbeddedResource Include="getWitnessInformation.resx">
       <DependentUpon>getWitnessInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="startPage.resx">
       <DependentUpon>startPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,10 +131,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="white.resx">
-      <DependentUpon>white.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="app.config" />
+    <None Include="CarInfo.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -146,7 +152,7 @@
     <None Include="asset\damn.wav" />
     <Content Include="music\coin.wav" />
     <Content Include="music\damn.wav" />
-    <Content Include="PCSC.txt" />
+    <Content Include="sql\getAllCarsByPlace.txt" />
     <Content Include="sql\getNameFromCardId.txt" />
     <Content Include="sql\test.txt" />
   </ItemGroup>

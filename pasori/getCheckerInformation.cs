@@ -213,7 +213,7 @@ namespace pasori
 
 
 
-            return;
+            this.Close();
         }
 
 
