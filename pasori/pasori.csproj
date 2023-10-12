@@ -153,6 +153,7 @@
     <Content Include="music\coin.wav" />
     <Content Include="music\damn.wav" />
     <Content Include="sql\getAllCarsByPlace.txt" />
+    <Content Include="sql\getNameByCode.txt" />
     <Content Include="sql\getNameFromCardId.txt" />
     <Content Include="sql\test.txt" />
   </ItemGroup>
