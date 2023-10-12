@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0252: 予期しない参照比較です。左辺をキャストする必要があります
+dotnet_diagnostic.CS0252.severity = none

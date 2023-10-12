@@ -13,4 +13,7 @@ C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.csproj.CoreCompileInputs.ca
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.exe
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.pdb
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.Form1.resources
-C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.white.resources
+C:\Users\user\Desktop\pasori\pasori\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\Desktop\pasori\pasori\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.csproj.CopyComplete
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.mainForm.resources

@@ -7,12 +7,16 @@ namespace pasori
 {
     public  class Status
     {
-        //車のナンバー
-        private string carNumber;
+        
         //本人の職員ｺｰﾄﾞ
         private string code;
         //本人の名前
         private string name;
+
+        //車のナンバー
+        private string carNumber;
+        //車種
+        private string carName;
 
         //運転前か後か　後ならフラグ
         private Boolean driveStatus;
@@ -34,10 +38,16 @@ namespace pasori
         //立会人の名前
         private string witnessName;
 
-        public string propertyCarNumbrer
+        public string propertyCarNumber
         {
             set { carNumber = value; }
             get { return carNumber; }
+        }
+
+        public string propertyCarName
+        {
+            set { carName = value; }
+            get { return carName; }
         }
 
         public string propertyCode
@@ -96,6 +106,12 @@ namespace pasori
         {
             set { witnessName = value; }
             get { return witnessName; }
+        }
+
+        public string propertyComment
+        {
+            set { comment = value; }
+            get { return comment; }
         }
     }
 

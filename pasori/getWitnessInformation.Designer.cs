@@ -34,7 +34,7 @@ namespace pasori
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(48, 53);
             this.label1.Name = "label1";
@@ -53,8 +53,8 @@ namespace pasori
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.getWitnessInformation_Shown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
