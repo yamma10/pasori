@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCSC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,13 @@ namespace pasori
         Dictionary<string, string> visit = new Dictionary<string, string>();
         Dictionary<string, string> daycare = new Dictionary<string, string>();
         Dictionary<string, Dictionary<string, string>> loc = new Dictionary<string, Dictionary<string, string>>();
+
+        #region "pasoriAPIで使用する変数の定義"
+        uint ret;
+        IntPtr hContext;
+        string readerName;
+        #endregion
+
         public mainForm(ref Status d)
         {
             InitializeComponent();
@@ -29,13 +37,14 @@ namespace pasori
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+            #region "車を取ってくる"
             //基本の部分のクエリを取得する
             string query = new StreamReader(@"../../sql/getAllCarsByPlace.txt").ReadToEnd();
 
             //読み取った情報に置き換える
             query = query.Replace("where 場所='院内'", "");
 
-            bool check = interaction_Access.interaction(ref dt, query, const_Util.alc);
+            bool check =  interaction_Access.Interaction(ref dt, query, const_Util.alc);
 
             int i = 0;
             while (i < dt.Rows.Count)
@@ -61,6 +70,63 @@ namespace pasori
             loc.Add("デイケア", daycare);
 
             dt.Clear();
+            #endregion
+
+            #region "pasori リソースマネージャに接続してハンドルを取得する"
+            //メモリブロックの先頭
+            hContext = IntPtr.Zero;
+
+            ret = Api.SCardEstablishContext(Constant.SCARD_SCOPE_USER, IntPtr.Zero, IntPtr.Zero, out hContext);
+            if (ret != Constant.SCARD_S_SUCCESS)
+            {
+                string message;
+                switch (ret)
+                {
+                    case Constant.SCARD_E_NO_SERVICE:
+                        message = "サービスが起動されていません。";
+                        break;
+                    default:
+                        message = "サービスに接続できません。 code = " + ret;
+                        break;
+                }
+                throw new ApplicationException(message);
+            }
+
+            if (hContext == IntPtr.Zero)
+            {
+                throw new ApplicationException("コンテキストの取得に失敗しました");
+            }
+            #endregion
+
+            #region "pasori PCに接続されているNFCリーダを取得する。"
+
+            uint pcchReaders = 0;
+
+            //NFCリーダの文字列バッファのサイズを取得
+            ret = Api.SCardListReaders(hContext, null, null, ref pcchReaders);
+            if (ret != Constant.SCARD_S_SUCCESS)
+            {
+                //検出失敗
+                throw new ApplicationException("NFCリーダを確認できません");
+            }
+
+            //NFCリーダの文字列を取得
+            byte[] mszReaders = new byte[pcchReaders * 2]; //1文字2byte
+            ret = Api.SCardListReaders(hContext, null, mszReaders, ref pcchReaders);
+            if (ret != Constant.SCARD_S_SUCCESS)
+            {
+                //検出失敗
+                throw new ApplicationException("NFCリーダの取得に失敗しました");
+            }
+
+            UnicodeEncoding unicodeEncoding = new UnicodeEncoding();
+            //byte列をエンコードしてStringを返す
+            string readerNameMultiString = unicodeEncoding.GetString(mszReaders);
+
+            //認識したNDCリーダの最初の一台を使用する
+            int nullindex = readerNameMultiString.IndexOf((char)0);
+            readerName = readerNameMultiString.Substring(0, nullindex);
+            #endregion
         }
 
         //1 場所を選択すると、車種が出る
@@ -167,17 +233,18 @@ namespace pasori
         //タブが切り替わる際に起こるイベント
         private void mainTab_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (mainTab.SelectedTab == getCheckerInformation)
+            if (mainTab.SelectedTab == getCheckerInformation || mainTab.SelectedTab == getWitnessInformation)
             {
-                timer1.Enabled = true;
+                readInformation.Enabled = true;
             }
 
-            if (mainTab.SelectedTab == confirmPage)
+            if (mainTab.SelectedTab == confirmTab)
             {
                 textBox6.Text = "";
                 if(data.propertyAlcoholFlag)
                 {
-                    textBox6.Text = textBox6.Text + "検出者名:" + data.propertyName + "\r\n";
+                    textBox6.Text = textBox6.Text + "検出者名: " + data.propertyName + "\r\n";
+                    textBox6.Text = textBox6.Text + "アルコールチェック: 異常あり\r\n";
                 } else
                 {
                     if(data.propertyDriveStatus)
@@ -210,24 +277,132 @@ namespace pasori
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
+            //readInformation.Enabled = false;
             //MessageBox.Show("hello");
-            
+            #region "接続されているNFCリーダを指定して、カードを接続する。30秒間、カードと接続できなかった場合、接続されるまでループする"
+
+            //Stopwatch stopWatch = new Stopwatch();
+            //stopWatch.Start();
+
+            IntPtr hCard = IntPtr.Zero;
+            IntPtr activeProtocol = IntPtr.Zero;
+            hCard = IntPtr.Zero;
+            activeProtocol = IntPtr.Zero;
+            var tmpret = Api.SCardConnect(hContext, readerName, Constant.SCARD_SHARE_SHARED, Constant.SCARD_PROTOCOL_T1, ref hCard, ref activeProtocol);
+
+            if (tmpret != Constant.SCARD_S_SUCCESS)
+            {
+                return;
+            }
+            else
+            {
+                readInformation.Enabled = false ;
+                //stopWatch.Stop();
+                #region "DBとやりとりする"
+
+                DataTable dt = new DataTable();
+                Boolean check = false;
+                #region "接続"
+                #region "接続したカードにコマンドを送信し、結果を受信する。ここでIDmを取得したり、カードに保存されている情報を読み取る"
+                uint maxRecvDataLen = 256;
+                var recvBuffer = new byte[maxRecvDataLen + 2];
+                var sendBUffer = new byte[] { 0xff, 0xca, 0x00, 0x00, 0x00 }; //IDmを取得
+
+                Api.SCARD_IO_REQUEST ioRecv = new Api.SCARD_IO_REQUEST();
+                ioRecv.cbPciLength = recvBuffer.Length;
+
+                int pcbRecvLength = recvBuffer.Length;
+                int cbSendLength = sendBUffer.Length;
+
+                IntPtr handle = Api.LoadLibrary("winscard.dll");
+                IntPtr pci = Api.GetProcAddress(handle, "g_rgCardT1Pci");
+                Api.FreeLibrary(handle);
+
+                tmpret = Api.SCardTransmit(hCard, pci, sendBUffer, cbSendLength, ioRecv, recvBuffer, ref pcbRecvLength);
+
+                if (tmpret != Constant.SCARD_S_SUCCESS)
+                {
+                    throw new ApplicationException("NFCカードへの送信に失敗しました " + ret);
+                }
+
+                //受信データからIDmを抽出する
+                string cardId = BitConverter.ToString(recvBuffer, 0, pcbRecvLength - 2);
+                //MessageBox.Show(cardId);
+
+
+
+                #endregion
+                #endregion
+
+                //基本の部分のクエリを取得する
+                string query = new StreamReader(@"../../sql/getNameFromCardId.txt").ReadToEnd();
+
+                //読み取った情報に置き換える
+                query = query.Replace("0116060016109B11", cardId);
+                query = query.Replace("-", "");
+
+                check = interaction_Access.Interaction(ref dt, query, const_Util.db1);
+
+                #endregion
+
+                if (dt.Rows.Count == 0)
+                {
+
+                    MessageBox.Show("登録されていないユーザーです");
+                    readInformation.Enabled = true;
+                    return;
+                }
+                else
+                {
+                    data.propertyCode = dt.Rows[0].ItemArray[0].ToString();
+                    data.propertyName = dt.Rows[0].ItemArray[1].ToString();
+                    if (cardId != "")
+                    {
+                        System.IO.Stream stream = Properties.Resources.coin;
+
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(stream);
+
+                        player.PlaySync();
+
+                        player.Dispose();
+                    }
+
+                    mainTab.SelectedTab = healthCheck;
+                    
+                }
+            }
+           
+            #endregion
         }
 
         //2 次のページに進む
         private void button1_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
+            readInformation.Enabled = false;
             if(textBox1.Text !="" && textBox2.Text != "")
             {
-                mainTab.SelectedTab = healthCheck;
-                data.propertyName = textBox2.Text;
+                if(data.propertyAlcoholFlag)
+                {
+                    data.propertyName = textBox2.Text;
+                    mainTab.SelectedTab = confirmTab;
+                } else
+                {
+                    mainTab.SelectedTab = healthCheck;
+                    data.propertyName = textBox2.Text;
+                    //readInformation.Enabled = true;
+                }
+                
             } else
             {
                 MessageBox.Show("カードを読み取るか、職員ｺｰﾄﾞを入力してください");
             }
             
+        }
+
+        //2　前のページに戻る
+        private void checkerInformation_back_Click(object sender, EventArgs e)
+        {
+            mainTab.SelectedTab = firstTab;
         }
 
         //2 職員ｺｰﾄﾞから職員名を取得する
@@ -245,7 +420,7 @@ namespace pasori
 
 
 
-                bool check = interaction_Access.interaction(ref dt, query, const_Util.db1);
+                bool check = interaction_Access.Interaction(ref dt, query, const_Util.db1);
 
 
 
@@ -317,7 +492,7 @@ namespace pasori
 
 
 
-                bool check = interaction_Access.interaction(ref dt, query, const_Util.db1);
+                bool check = interaction_Access.Interaction(ref dt, query, const_Util.db1);
 
 
 
@@ -367,18 +542,20 @@ namespace pasori
             if (radioButton1.Checked == true)
             {
 
-                //立会人が入力されていない場合
-                if (textBox3.Text == "" || textBox4.Text == "")
-                {
-                    MessageBox.Show("立会人を入力してください");
-                    return;
-                }
+                
 
                 data.propertyPhysicalCondition = false;
                 data.propertyWitnessName = textBox4.Text;
 
+                //立会人が入力されていない場合
+                if (textBox3.Text == "" || textBox4.Text == "")
+                {
+                    //立会人のカードを読み取るTabに移動する
+                    mainTab.SelectedTab = getWitnessInformation;
+                }
+
                 //立会人のカードを読み取るTabに移動する
-                mainTab.SelectedTab = checkWitnessInformation;
+                mainTab.SelectedTab = confirmTab;
             }
             else
             {
@@ -388,31 +565,40 @@ namespace pasori
                     MessageBox.Show("症状を入力してください");
                     return;
                 }
-                //立会人が入力されていない場合
-                if(textBox3.Text == "" || textBox4.Text == "")
-                {
-                    MessageBox.Show("立会人を入力してください");
-                    return;
-                }
-
+                
                 data.propertyPhysicalCondition = true;
                 data.propertyWitnessName = textBox4.Text;
                 data.propertyComment = textBox5.Text;
+
+                //立会人が入力されていない場合
+                if (textBox3.Text == "" || textBox4.Text == "")
+                {
+                    //立会人のカードを読み取るTabに移動する
+                    mainTab.SelectedTab = getWitnessInformation;
+
+                }
+
                 //立会人のカードを読み取るTabに移動する
-                mainTab.SelectedTab = checkWitnessInformation;
+                mainTab.SelectedTab = confirmTab;
             }
         }
 
+        
+
         //確認ページで「戻る」ボタンを押した場合
-        private void confirm_backButton_Click(object sender, EventArgs e)
+
+        private void confirm_backPage_Click(object sender, EventArgs e)
         {
 
         }
 
         //確認ページで「登録する」ボタンを押した場合
-        private void confirm_registerButton_Click(object sender, EventArgs e)
+
+        private void confirm_register_Click(object sender, EventArgs e)
         {
-            mainTab.SelectedTab = lastPage;
+            mainTab.SelectedTab = lastTab;
         }
+
+        
     }
 }

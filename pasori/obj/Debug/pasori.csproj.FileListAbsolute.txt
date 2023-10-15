@@ -3,7 +3,6 @@ C:\Users\user\Desktop\pasori\pasori\bin\Debug\pasori.exe
 C:\Users\user\Desktop\pasori\pasori\bin\Debug\pasori.pdb
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.csproj.AssemblyReference.cache
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.endPage.resources
-C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.getWitnessInformation.resources
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.startPage.resources
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.getCheckerInformation.resources
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.healthCheck.resources
@@ -17,3 +16,4 @@ C:\Users\user\Desktop\pasori\pasori\bin\Debug\Newtonsoft.Json.dll
 C:\Users\user\Desktop\pasori\pasori\bin\Debug\Newtonsoft.Json.xml
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.csproj.CopyComplete
 C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.mainForm.resources
+C:\Users\user\Desktop\pasori\pasori\obj\Debug\pasori.iranai.resources

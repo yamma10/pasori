@@ -1,7 +1,7 @@
 ﻿
 namespace pasori
 {
-    partial class getWitnessInformation
+    partial class iranai
     {
         /// <summary>
         /// Required designer variable.

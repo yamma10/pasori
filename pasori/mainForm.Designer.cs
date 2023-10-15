@@ -30,11 +30,15 @@ namespace pasori
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.confirmPage = new System.Windows.Forms.TabPage();
+            this.confirmTab = new System.Windows.Forms.TabPage();
             this.endPageTable = new System.Windows.Forms.TableLayoutPanel();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.confirm_backPage = new System.Windows.Forms.Button();
+            this.confirm_register = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkWitnessInformation = new System.Windows.Forms.TabPage();
+            this.getWitnessInformation = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.healthCheck = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -68,17 +72,6 @@ namespace pasori
             this.button11 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.getCheckerInformation = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tableIfLostCardKey = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.firstTab = new System.Windows.Forms.TabPage();
             this.mainTableTop = new System.Windows.Forms.TableLayoutPanel();
@@ -95,16 +88,28 @@ namespace pasori
             this.button2 = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.mainTab = new System.Windows.Forms.TabControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.confirm_backButton = new System.Windows.Forms.Button();
-            this.confirm_registerButton = new System.Windows.Forms.Button();
-            this.lastPage = new System.Windows.Forms.TabPage();
+            this.lastTab = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.confirmPage.SuspendLayout();
+            this.readInformation = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkerInformation_back = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableIfLostCardKey = new System.Windows.Forms.TableLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.confirmTab.SuspendLayout();
             this.endPageTable.SuspendLayout();
-            this.checkWitnessInformation.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
+            this.tableLayoutPanel21.SuspendLayout();
+            this.getWitnessInformation.SuspendLayout();
             this.healthCheck.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -121,11 +126,6 @@ namespace pasori
             this.tableLayoutPanel19.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.getCheckerInformation.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableIfLostCardKey.SuspendLayout();
             this.firstTab.SuspendLayout();
             this.mainTableTop.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -133,22 +133,27 @@ namespace pasori
             this.tableLayoutPanel1.SuspendLayout();
             this.mainTableBottom.SuspendLayout();
             this.mainTab.SuspendLayout();
-            this.tableLayoutPanel20.SuspendLayout();
-            this.tableLayoutPanel21.SuspendLayout();
-            this.lastPage.SuspendLayout();
+            this.lastTab.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableIfLostCardKey.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // confirmPage
+            // confirmTab
             // 
-            this.confirmPage.Controls.Add(this.endPageTable);
-            this.confirmPage.Controls.Add(this.label3);
-            this.confirmPage.Location = new System.Drawing.Point(4, 22);
-            this.confirmPage.Name = "confirmPage";
-            this.confirmPage.Padding = new System.Windows.Forms.Padding(3);
-            this.confirmPage.Size = new System.Drawing.Size(1530, 783);
-            this.confirmPage.TabIndex = 8;
-            this.confirmPage.Text = "tabPage5";
-            this.confirmPage.UseVisualStyleBackColor = true;
+            this.confirmTab.Controls.Add(this.endPageTable);
+            this.confirmTab.Controls.Add(this.label3);
+            this.confirmTab.Location = new System.Drawing.Point(4, 22);
+            this.confirmTab.Name = "confirmTab";
+            this.confirmTab.Padding = new System.Windows.Forms.Padding(3);
+            this.confirmTab.Size = new System.Drawing.Size(1530, 783);
+            this.confirmTab.TabIndex = 8;
+            this.confirmTab.Text = "tabPage5";
+            this.confirmTab.UseVisualStyleBackColor = true;
             // 
             // endPageTable
             // 
@@ -176,13 +181,76 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox6.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox6.Location = new System.Drawing.Point(470, 3);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(461, 624);
             this.textBox6.TabIndex = 0;
+            // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel20.ColumnCount = 1;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 3);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(937, 3);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 4;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(463, 624);
+            this.tableLayoutPanel20.TabIndex = 1;
+            // 
+            // tableLayoutPanel21
+            // 
+            this.tableLayoutPanel21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel21.ColumnCount = 2;
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel21.Controls.Add(this.confirm_backPage, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.confirm_register, 1, 0);
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 471);
+            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
+            this.tableLayoutPanel21.RowCount = 1;
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(457, 150);
+            this.tableLayoutPanel21.TabIndex = 0;
+            // 
+            // confirm_backPage
+            // 
+            this.confirm_backPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.confirm_backPage.Location = new System.Drawing.Point(3, 3);
+            this.confirm_backPage.Name = "confirm_backPage";
+            this.confirm_backPage.Size = new System.Drawing.Size(222, 144);
+            this.confirm_backPage.TabIndex = 0;
+            this.confirm_backPage.Text = "戻る";
+            this.confirm_backPage.UseVisualStyleBackColor = true;
+            this.confirm_backPage.Click += new System.EventHandler(this.confirm_backPage_Click);
+            // 
+            // confirm_register
+            // 
+            this.confirm_register.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.confirm_register.Location = new System.Drawing.Point(231, 3);
+            this.confirm_register.Name = "confirm_register";
+            this.confirm_register.Size = new System.Drawing.Size(223, 144);
+            this.confirm_register.TabIndex = 1;
+            this.confirm_register.Text = "登録する";
+            this.confirm_register.UseVisualStyleBackColor = true;
+            this.confirm_register.Click += new System.EventHandler(this.confirm_register_Click);
             // 
             // label3
             // 
@@ -196,16 +264,16 @@ namespace pasori
             this.label3.Text = "登録内容を確認してください";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkWitnessInformation
+            // getWitnessInformation
             // 
-            this.checkWitnessInformation.Controls.Add(this.label10);
-            this.checkWitnessInformation.Location = new System.Drawing.Point(4, 22);
-            this.checkWitnessInformation.Name = "checkWitnessInformation";
-            this.checkWitnessInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.checkWitnessInformation.Size = new System.Drawing.Size(1530, 783);
-            this.checkWitnessInformation.TabIndex = 3;
-            this.checkWitnessInformation.Text = "tabPage4";
-            this.checkWitnessInformation.UseVisualStyleBackColor = true;
+            this.getWitnessInformation.Controls.Add(this.label10);
+            this.getWitnessInformation.Location = new System.Drawing.Point(4, 22);
+            this.getWitnessInformation.Name = "getWitnessInformation";
+            this.getWitnessInformation.Padding = new System.Windows.Forms.Padding(3);
+            this.getWitnessInformation.Size = new System.Drawing.Size(1530, 783);
+            this.getWitnessInformation.TabIndex = 3;
+            this.getWitnessInformation.Text = "tabPage4";
+            this.getWitnessInformation.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -694,8 +762,8 @@ namespace pasori
             // getCheckerInformation
             // 
             this.getCheckerInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.getCheckerInformation.Controls.Add(this.panel1);
             this.getCheckerInformation.Controls.Add(this.tableLayoutPanel3);
-            this.getCheckerInformation.Controls.Add(this.label1);
             this.getCheckerInformation.Location = new System.Drawing.Point(4, 22);
             this.getCheckerInformation.Name = "getCheckerInformation";
             this.getCheckerInformation.Padding = new System.Windows.Forms.Padding(3);
@@ -704,174 +772,15 @@ namespace pasori
             this.getCheckerInformation.Text = "tabPage2";
             this.getCheckerInformation.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(27, 665);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1472, 110);
-            this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(983, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(486, 104);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(343, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 98);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "次へ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 1);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(334, 98);
-            this.tableLayoutPanel5.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(328, 49);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "カードキーが無い場合";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel6.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.tableIfLostCardKey, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 52);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(328, 43);
-            this.tableLayoutPanel6.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 43);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "担当者名";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableIfLostCardKey
-            // 
-            this.tableIfLostCardKey.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableIfLostCardKey.ColumnCount = 3;
-            this.tableIfLostCardKey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableIfLostCardKey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableIfLostCardKey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableIfLostCardKey.Controls.Add(this.textBox1, 0, 0);
-            this.tableIfLostCardKey.Controls.Add(this.textBox2, 1, 0);
-            this.tableIfLostCardKey.Controls.Add(this.button3, 2, 0);
-            this.tableIfLostCardKey.Location = new System.Drawing.Point(101, 3);
-            this.tableIfLostCardKey.Name = "tableIfLostCardKey";
-            this.tableIfLostCardKey.RowCount = 1;
-            this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableIfLostCardKey.Size = new System.Drawing.Size(224, 37);
-            this.tableIfLostCardKey.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(61, 19);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(70, 9);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(106, 19);
-            this.textBox2.TabIndex = 1;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(182, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(39, 31);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "クリア";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(42, 291);
+            this.label1.Location = new System.Drawing.Point(50, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1443, 54);
+            this.label1.Size = new System.Drawing.Size(1443, 474);
             this.label1.TabIndex = 1;
             this.label1.Text = "本人のカードをかざしてください";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1081,9 +990,9 @@ namespace pasori
             this.mainTab.Controls.Add(this.firstTab);
             this.mainTab.Controls.Add(this.getCheckerInformation);
             this.mainTab.Controls.Add(this.healthCheck);
-            this.mainTab.Controls.Add(this.checkWitnessInformation);
-            this.mainTab.Controls.Add(this.confirmPage);
-            this.mainTab.Controls.Add(this.lastPage);
+            this.mainTab.Controls.Add(this.getWitnessInformation);
+            this.mainTab.Controls.Add(this.confirmTab);
+            this.mainTab.Controls.Add(this.lastTab);
             this.mainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTab.Location = new System.Drawing.Point(0, 0);
             this.mainTab.Name = "mainTab";
@@ -1092,84 +1001,16 @@ namespace pasori
             this.mainTab.TabIndex = 0;
             this.mainTab.SelectedIndexChanged += new System.EventHandler(this.mainTab_SelectedIndexChanged);
             // 
-            // timer1
+            // lastTab
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel20.ColumnCount = 1;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 3);
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(937, 3);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 4;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(463, 624);
-            this.tableLayoutPanel20.TabIndex = 1;
-            // 
-            // tableLayoutPanel21
-            // 
-            this.tableLayoutPanel21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel21.ColumnCount = 2;
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel21.Controls.Add(this.confirm_backButton, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.confirm_registerButton, 1, 0);
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 471);
-            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            this.tableLayoutPanel21.RowCount = 1;
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(457, 150);
-            this.tableLayoutPanel21.TabIndex = 0;
-            // 
-            // confirm_backButton
-            // 
-            this.confirm_backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.confirm_backButton.Location = new System.Drawing.Point(3, 3);
-            this.confirm_backButton.Name = "confirm_backButton";
-            this.confirm_backButton.Size = new System.Drawing.Size(222, 144);
-            this.confirm_backButton.TabIndex = 0;
-            this.confirm_backButton.Text = "戻る";
-            this.confirm_backButton.UseVisualStyleBackColor = true;
-            this.confirm_backButton.Click += new System.EventHandler(this.confirm_backButton_Click);
-            // 
-            // confirm_registerButton
-            // 
-            this.confirm_registerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.confirm_registerButton.Location = new System.Drawing.Point(231, 3);
-            this.confirm_registerButton.Name = "confirm_registerButton";
-            this.confirm_registerButton.Size = new System.Drawing.Size(223, 144);
-            this.confirm_registerButton.TabIndex = 1;
-            this.confirm_registerButton.Text = "登録する";
-            this.confirm_registerButton.UseVisualStyleBackColor = true;
-            this.confirm_registerButton.Click += new System.EventHandler(this.confirm_registerButton_Click);
-            // 
-            // lastPage
-            // 
-            this.lastPage.Controls.Add(this.label4);
-            this.lastPage.Location = new System.Drawing.Point(4, 22);
-            this.lastPage.Name = "lastPage";
-            this.lastPage.Padding = new System.Windows.Forms.Padding(3);
-            this.lastPage.Size = new System.Drawing.Size(1530, 783);
-            this.lastPage.TabIndex = 9;
-            this.lastPage.Text = "tabPage6";
-            this.lastPage.UseVisualStyleBackColor = true;
+            this.lastTab.Controls.Add(this.label4);
+            this.lastTab.Location = new System.Drawing.Point(4, 22);
+            this.lastTab.Name = "lastTab";
+            this.lastTab.Padding = new System.Windows.Forms.Padding(3);
+            this.lastTab.Size = new System.Drawing.Size(1530, 783);
+            this.lastTab.TabIndex = 9;
+            this.lastTab.Text = "tabPage6";
+            this.lastTab.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -1184,6 +1025,214 @@ namespace pasori
             this.label4.Text = "登録しました";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // readInformation
+            // 
+            this.readInformation.Interval = 1000;
+            this.readInformation.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1534, 665);
+            this.panel1.TabIndex = 3;
+            // 
+            // tableLayoutPanel22
+            // 
+            this.tableLayoutPanel22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel22.ColumnCount = 3;
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel22.Controls.Add(this.checkerInformation_back, 0, 0);
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.tableLayoutPanel22.RowCount = 1;
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(448, 112);
+            this.tableLayoutPanel22.TabIndex = 1;
+            // 
+            // checkerInformation_back
+            // 
+            this.checkerInformation_back.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkerInformation_back.Location = new System.Drawing.Point(3, 3);
+            this.checkerInformation_back.Name = "checkerInformation_back";
+            this.checkerInformation_back.Size = new System.Drawing.Size(143, 106);
+            this.checkerInformation_back.TabIndex = 0;
+            this.checkerInformation_back.Text = "戻る";
+            this.checkerInformation_back.UseVisualStyleBackColor = true;
+            this.checkerInformation_back.Click += new System.EventHandler(this.checkerInformation_back_Click);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel4.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(911, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(450, 112);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 1);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(309, 106);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel6.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableIfLostCardKey, 1, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 56);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(303, 47);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // tableIfLostCardKey
+            // 
+            this.tableIfLostCardKey.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableIfLostCardKey.ColumnCount = 3;
+            this.tableIfLostCardKey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableIfLostCardKey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableIfLostCardKey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableIfLostCardKey.Controls.Add(this.textBox1, 0, 0);
+            this.tableIfLostCardKey.Controls.Add(this.textBox2, 1, 0);
+            this.tableIfLostCardKey.Controls.Add(this.button3, 2, 0);
+            this.tableIfLostCardKey.Location = new System.Drawing.Point(93, 3);
+            this.tableIfLostCardKey.Name = "tableIfLostCardKey";
+            this.tableIfLostCardKey.RowCount = 1;
+            this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableIfLostCardKey.Size = new System.Drawing.Size(207, 41);
+            this.tableIfLostCardKey.TabIndex = 4;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(168, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(36, 35);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "クリア";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(65, 11);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(97, 19);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(3, 11);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(56, 19);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 47);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "担当者名";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(303, 53);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "カードキーが無い場合";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button1.Location = new System.Drawing.Point(318, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 106);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "次へ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel22, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(76, 665);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1364, 118);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1196,10 +1245,12 @@ namespace pasori
             this.Text = "mainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.mainForm_Load);
-            this.confirmPage.ResumeLayout(false);
+            this.confirmTab.ResumeLayout(false);
             this.endPageTable.ResumeLayout(false);
             this.endPageTable.PerformLayout();
-            this.checkWitnessInformation.ResumeLayout(false);
+            this.tableLayoutPanel20.ResumeLayout(false);
+            this.tableLayoutPanel21.ResumeLayout(false);
+            this.getWitnessInformation.ResumeLayout(false);
             this.healthCheck.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
@@ -1220,12 +1271,6 @@ namespace pasori
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
             this.getCheckerInformation.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableIfLostCardKey.ResumeLayout(false);
-            this.tableIfLostCardKey.PerformLayout();
             this.firstTab.ResumeLayout(false);
             this.mainTableTop.ResumeLayout(false);
             this.mainTableTop.PerformLayout();
@@ -1235,20 +1280,26 @@ namespace pasori
             this.tableLayoutPanel1.PerformLayout();
             this.mainTableBottom.ResumeLayout(false);
             this.mainTab.ResumeLayout(false);
-            this.tableLayoutPanel20.ResumeLayout(false);
-            this.tableLayoutPanel21.ResumeLayout(false);
-            this.lastPage.ResumeLayout(false);
+            this.lastTab.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableIfLostCardKey.ResumeLayout(false);
+            this.tableIfLostCardKey.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabPage confirmPage;
+        private System.Windows.Forms.TabPage confirmTab;
         private System.Windows.Forms.TableLayoutPanel endPageTable;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabPage checkWitnessInformation;
+        private System.Windows.Forms.TabPage getWitnessInformation;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage healthCheck;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
@@ -1282,17 +1333,6 @@ namespace pasori
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TabPage getCheckerInformation;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TableLayoutPanel tableIfLostCardKey;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage firstTab;
         private System.Windows.Forms.TableLayoutPanel mainTableTop;
@@ -1308,13 +1348,27 @@ namespace pasori
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.TabControl mainTab;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer readInformation;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
-        private System.Windows.Forms.Button confirm_backButton;
-        private System.Windows.Forms.Button confirm_registerButton;
-        private System.Windows.Forms.TabPage lastPage;
+        private System.Windows.Forms.TabPage lastTab;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button confirm_backPage;
+        private System.Windows.Forms.Button confirm_register;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TableLayoutPanel tableIfLostCardKey;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        private System.Windows.Forms.Button checkerInformation_back;
     }
 }
