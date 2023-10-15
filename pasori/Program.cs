@@ -36,7 +36,7 @@ namespace pasori
 
                 Application.Run(new healthCheck(ref data));
 
-                Application.Run(new getWitnessInformation(ref data));
+                Application.Run(new iranai(ref data));
 
             }
             

@@ -13,10 +13,10 @@ using System.IO;
 
 namespace pasori
 {
-    public partial class getWitnessInformation : Form
+    public partial class iranai : Form
     {
         Status data;
-        public getWitnessInformation(ref Status d)
+        public iranai(ref Status d)
         {
             InitializeComponent();
             data = d;
@@ -145,7 +145,7 @@ namespace pasori
                     //読み取った情報に置き換える
                     //query = query.Replace("0116060016109B11", cardId);
 
-                    check = interaction_Access.interaction(ref dt, query, const_Util.db1);
+                    check = interaction_Access.Interaction(ref dt, query, const_Util.db1);
 
                     #endregion
 
