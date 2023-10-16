@@ -1,5 +1,7 @@
 /pasori/interaction_Access.cs
 
+/pasori/bin/*
+
 /pasori/sql/*
 
 /pasori/asset/*
