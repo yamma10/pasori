@@ -8,9 +8,12 @@
 
 /pasori/const_Util.cs
 
+/pasori/replaceSQL.cs
+
 /pasori Access サンプル
 
 /.vs/*
 
 /packages/*
+
 

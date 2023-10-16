@@ -25,7 +25,7 @@ namespace pasori
         //チェックする人の電子錠ID
         private static string checkerId;
         //チェック方法
-        private string checkMethod;
+        private Boolean checkMethod;
         //顔色　悪い場合フラグを立てる
         private Boolean complexion;
         //体調　悪い場合フラグを立てる
@@ -33,10 +33,12 @@ namespace pasori
         //コメント　
         private string comment;
 
-        //立会人の患者コード
+        //立会人の職員コード
         private string witnesscode;
         //立会人の名前
         private string witnessName;
+
+        
 
         public string propertyCarNumber
         {
@@ -78,7 +80,7 @@ namespace pasori
             get { return checkerId; }
         }
 
-        public string propertyCheckMethod
+        public Boolean propertyCheckMethod
         {
             set { checkMethod = value; }
             get { return checkMethod; }

@@ -90,6 +90,7 @@
     <Compile Include="healthCheck.Designer.cs">
       <DependentUpon>healthCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="replaceSQL.cs" />
     <Compile Include="status.cs" />
     <Compile Include="startPage.cs">
       <SubType>Form</SubType>
@@ -152,9 +153,12 @@
     <None Include="asset\damn.wav" />
     <Content Include="music\coin.wav" />
     <Content Include="music\damn.wav" />
+    <Content Include="sql\insertWhenDidntDetect.txt" />
+    <Content Include="sql\insertWhenDetected.txt" />
     <Content Include="sql\getAllCarsByPlace.txt" />
     <Content Include="sql\getNameByCode.txt" />
     <Content Include="sql\getNameFromCardId.txt" />
+    <Content Include="sql\guardmanOrNot.txt" />
     <Content Include="sql\test.txt" />
   </ItemGroup>
   <ItemGroup />
