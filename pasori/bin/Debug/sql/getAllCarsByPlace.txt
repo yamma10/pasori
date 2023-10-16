@@ -1,3 +1,0 @@
-﻿select 車No,車名,場所
-from 社用車マスタ
-where 場所='院内'
