@@ -13,20 +13,27 @@ namespace pasori
         [STAThread]
         static void Main()
         {
-            while(true)
+
+            try
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Status data = new Status();
 
                 Application.Run(new mainForm(ref data));
-
-                //音楽テスト
-                //Application.Run(new Form1());
-
-
+            }
+            catch
+            {
 
             }
+                    
+
+            //音楽テスト
+            //Application.Run(new Form1());
+
+
+            //MessageBox.Show("hhhh");
+
             
         }
     }

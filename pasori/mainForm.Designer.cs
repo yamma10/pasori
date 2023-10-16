@@ -128,6 +128,7 @@ namespace pasori
             this.label4 = new System.Windows.Forms.Label();
             this.readInformation = new System.Windows.Forms.Timer(this.components);
             this.toFirstTab = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
             this.confirmTab.SuspendLayout();
             this.endPageTable.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
@@ -462,7 +463,6 @@ namespace pasori
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(519, 352);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "異常あり";
             this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -516,7 +516,7 @@ namespace pasori
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(303, 71);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
@@ -669,6 +669,7 @@ namespace pasori
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(112, 19);
             this.textBox4.TabIndex = 2;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox3
             // 
@@ -1096,18 +1097,16 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainTableTop.ColumnCount = 1;
             this.mainTableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainTableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.mainTableTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.mainTableTop.Controls.Add(this.Title, 0, 0);
             this.mainTableTop.Controls.Add(this.groupBox1, 0, 1);
             this.mainTableTop.Controls.Add(this.tableLayoutPanel1, 0, 2);
             this.mainTableTop.Location = new System.Drawing.Point(25, 23);
             this.mainTableTop.Name = "mainTableTop";
             this.mainTableTop.RowCount = 3;
-            this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.mainTableTop.Size = new System.Drawing.Size(1483, 293);
+            this.mainTableTop.Size = new System.Drawing.Size(1483, 321);
             this.mainTableTop.TabIndex = 0;
             // 
             // Title
@@ -1115,7 +1114,7 @@ namespace pasori
             this.Title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("MS UI Gothic", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Title.Location = new System.Drawing.Point(2, 24);
+            this.Title.Location = new System.Drawing.Point(2, 21);
             this.Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(1479, 54);
@@ -1129,9 +1128,9 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox1.Location = new System.Drawing.Point(3, 105);
+            this.groupBox1.Location = new System.Drawing.Point(3, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1477, 67);
+            this.groupBox1.Size = new System.Drawing.Size(1477, 90);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -1150,14 +1149,14 @@ namespace pasori
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1471, 49);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1471, 72);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // after
             // 
             this.after.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.after.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(128)));
-            this.after.Location = new System.Drawing.Point(738, 11);
+            this.after.Location = new System.Drawing.Point(738, 23);
             this.after.Name = "after";
             this.after.Size = new System.Drawing.Size(319, 26);
             this.after.TabIndex = 3;
@@ -1169,7 +1168,7 @@ namespace pasori
             this.before.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.before.Checked = true;
             this.before.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(128)));
-            this.before.Location = new System.Drawing.Point(639, 13);
+            this.before.Location = new System.Drawing.Point(639, 24);
             this.before.Name = "before";
             this.before.Size = new System.Drawing.Size(93, 23);
             this.before.TabIndex = 2;
@@ -1187,7 +1186,7 @@ namespace pasori
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 178);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 200);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1530,12 +1529,12 @@ namespace pasori
             this.mainTableBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainTableBottom.Controls.Add(this.button2, 0, 0);
             this.mainTableBottom.Controls.Add(this.okButton, 0, 0);
-            this.mainTableBottom.Location = new System.Drawing.Point(150, 319);
+            this.mainTableBottom.Location = new System.Drawing.Point(150, 346);
             this.mainTableBottom.Name = "mainTableBottom";
             this.mainTableBottom.RowCount = 1;
             this.mainTableBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.mainTableBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 457F));
-            this.mainTableBottom.Size = new System.Drawing.Size(1203, 458);
+            this.mainTableBottom.Size = new System.Drawing.Size(1203, 431);
             this.mainTableBottom.TabIndex = 0;
             // 
             // button2
@@ -1544,7 +1543,7 @@ namespace pasori
             this.button2.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(128)));
             this.button2.Location = new System.Drawing.Point(605, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(594, 450);
+            this.button2.Size = new System.Drawing.Size(594, 423);
             this.button2.TabIndex = 7;
             this.button2.Text = "異常あり";
             this.button2.UseVisualStyleBackColor = true;
@@ -1556,7 +1555,7 @@ namespace pasori
             this.okButton.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(128)));
             this.okButton.Location = new System.Drawing.Point(4, 4);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(594, 450);
+            this.okButton.Size = new System.Drawing.Size(594, 423);
             this.okButton.TabIndex = 6;
             this.okButton.Text = "異常なし";
             this.okButton.UseVisualStyleBackColor = true;
@@ -1612,13 +1611,26 @@ namespace pasori
             this.toFirstTab.Interval = 3000;
             this.toFirstTab.Tick += new System.EventHandler(this.toFirstTab_Tick);
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Location = new System.Drawing.Point(4, 1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1530, 25);
+            this.panel4.TabIndex = 1;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(1538, 809);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.mainTab);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "mainForm";
             this.RightToLeftLayout = true;
             this.Text = "mainForm";
@@ -1779,5 +1791,6 @@ namespace pasori
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
         private System.Windows.Forms.Button getWitness_backPage;
         private System.Windows.Forms.Timer toFirstTab;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -40,7 +40,8 @@ namespace pasori
         {
             #region "車を取ってくる"
             //基本の部分のクエリを取得する
-            string query = new StreamReader(@"../../sql/getAllCarsByPlace.txt").ReadToEnd();
+            string query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/getAllCarsByPlace.txt").ReadToEnd();
+            //string query = new StreamReader(@"System.IO.Directory.GetCurrentDiegetAllCarsByPlace.txt").ReadToEnd();
 
             //読み取った情報に置き換える
             query = query.Replace("where 場所='院内'", "");
@@ -448,7 +449,7 @@ namespace pasori
                 #endregion
 
                 //基本の部分のクエリを取得する
-                string query = new StreamReader(@"../../sql/getNameFromCardId.txt").ReadToEnd();
+                string query = new StreamReader(@"System.IO.Directory.GetCurrentDiegetNameFromCardId.txt").ReadToEnd();
 
                 //読み取った情報に置き換える
                 query = query.Replace("0116060016109B11", cardId);
@@ -464,7 +465,7 @@ namespace pasori
                     if(mainTab.SelectedTab == getWitnessInformation)
                     {
                         
-                        query = new StreamReader(@"../../sql/guardmanOrNot.txt").ReadToEnd();
+                        query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/guardmanOrNot.txt").ReadToEnd();
                         //読み取った情報に置き換える
                         query = query.Replace("0116060016109B11", cardId);
                         query = query.Replace("-", "");
@@ -487,10 +488,14 @@ namespace pasori
                     if(mainTab.SelectedTab == getWitnessInformation)
                     {
                         //確認者と対象者の名前が一緒ではダメ
-                        data.propertyName = dt.Rows[0].ItemArray[1].ToString();
-                        MessageBox.Show("確認者と対象者が同一人物です");
-                        readInformation.Enabled = true;
-                        return;
+                        if(data.propertyName == dt.Rows[0].ItemArray[1].ToString())
+                        {
+                            MessageBox.Show("確認者と対象者が同一人物です");
+                            readInformation.Enabled = true;
+                            return;
+                        }
+                        
+                        
                     }
 
                     data.propertyCode = dt.Rows[0].ItemArray[0].ToString();
@@ -537,7 +542,7 @@ namespace pasori
             selectedCar = null;
             category = "";
             radioButton1.Checked = true;
-
+            before.Checked = true;
 
             toFirstTab.Enabled = false;
             mainTab.SelectedTab = firstTab;
@@ -587,7 +592,7 @@ namespace pasori
             if(e.KeyChar == (char)Keys.Enter)
             {
                 //基本の部分のクエリを取得する
-                string query = new StreamReader(@"../../sql/getNameByCode.txt").ReadToEnd();
+                string query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/getNameByCode.txt").ReadToEnd();
 
                 //読み取った情報に置き換える
                 query = query.Replace("1086", textBox1.Text);
@@ -662,7 +667,7 @@ namespace pasori
             if (e.KeyChar == (char)Keys.Enter)
             {
                 //基本の部分のクエリを取得する
-                string query = new StreamReader(@"../../sql/getNameByCode.txt").ReadToEnd();
+                string query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/getNameByCode.txt").ReadToEnd();
 
                 //読み取った情報に置き換える
                 query = query.Replace("1086", textBox3.Text);
@@ -680,7 +685,7 @@ namespace pasori
                     return;
                 }
 
-                textBox4.Text = dt.Rows[0].ItemArray[0].ToString();
+                textBox4.Text = dt.Rows[0].ItemArray[3].ToString();
             }
 
             dt.Clear();
