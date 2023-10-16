@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,7 +40,8 @@ namespace pasori
         {
             #region "車を取ってくる"
             //基本の部分のクエリを取得する
-            string query = new StreamReader(@"../../sql/getAllCarsByPlace.txt").ReadToEnd();
+            string query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/getAllCarsByPlace.txt").ReadToEnd();
+            //string query = new StreamReader(@"System.IO.Directory.GetCurrentDiegetAllCarsByPlace.txt").ReadToEnd();
 
             //読み取った情報に置き換える
             query = query.Replace("where 場所='院内'", "");
@@ -282,7 +284,7 @@ namespace pasori
             if (selectedCar == null)
             {
                 //カテゴリーがその他の場合、車種の選択はいらない
-                if (category == null)
+                if (category != "その他")
                 {
                     MessageBox.Show("車種が選択されていません");
                     return;
@@ -329,9 +331,7 @@ namespace pasori
             if (mainTab.SelectedTab == getCheckerInformation || mainTab.SelectedTab == getWitnessInformation)
             {
                 readInformation.Enabled = true;
-            }
-
-            if (mainTab.SelectedTab == confirmTab)
+            } else if(mainTab.SelectedTab == confirmTab)
             {
                 textBox6.Text = "";
                 textBox6.Text = textBox6.Text + "対象者No: " + data.propertyCode + "\r\n";
@@ -339,7 +339,8 @@ namespace pasori
                 if (data.propertyAlcoholFlag)
                 {
                     textBox6.Text = textBox6.Text + "アルコールチェック: 異常あり\r\n";
-                } else
+                }
+                else
                 {
                     textBox6.Text = textBox6.Text + "確認者No: " + data.propertyWitnessCode + "\r\n";
                     textBox6.Text = textBox6.Text + "確認者名: " + data.propertyWitnessName + "\r\n";
@@ -369,20 +370,25 @@ namespace pasori
                     if (data.propertyDriveStatus)
                     {
                         textBox6.Text = textBox6.Text + "状態: 運転後" + "\r\n";
-                    } else
+                    }
+                    else
                     {
                         textBox6.Text = textBox6.Text + "状態: 運転前" + "\r\n";
                     }
                     textBox6.Text = textBox6.Text + "車ナンバー: " + data.propertyCarNumber + "\r\n";
-                    
-                    
+
+
                 }
-                
+            } else if (mainTab.SelectedTab == lastTab)
+            {
+                toFirstTab.Enabled = true;
             }
+            
 
 
         }
 
+        #region "タイマーイベント"
         private void readInformation_Tick(object sender, EventArgs e)
         {
             //readInformation.Enabled = false;
@@ -443,7 +449,7 @@ namespace pasori
                 #endregion
 
                 //基本の部分のクエリを取得する
-                string query = new StreamReader(@"../../sql/getNameFromCardId.txt").ReadToEnd();
+                string query = new StreamReader(@"System.IO.Directory.GetCurrentDiegetNameFromCardId.txt").ReadToEnd();
 
                 //読み取った情報に置き換える
                 query = query.Replace("0116060016109B11", cardId);
@@ -459,7 +465,7 @@ namespace pasori
                     if(mainTab.SelectedTab == getWitnessInformation)
                     {
                         
-                        query = new StreamReader(@"../../sql/guardmanOrNot.txt").ReadToEnd();
+                        query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/guardmanOrNot.txt").ReadToEnd();
                         //読み取った情報に置き換える
                         query = query.Replace("0116060016109B11", cardId);
                         query = query.Replace("-", "");
@@ -479,6 +485,19 @@ namespace pasori
                 }
                 else
                 {
+                    if(mainTab.SelectedTab == getWitnessInformation)
+                    {
+                        //確認者と対象者の名前が一緒ではダメ
+                        if(data.propertyName == dt.Rows[0].ItemArray[1].ToString())
+                        {
+                            MessageBox.Show("確認者と対象者が同一人物です");
+                            readInformation.Enabled = true;
+                            return;
+                        }
+                        
+                        
+                    }
+
                     data.propertyCode = dt.Rows[0].ItemArray[0].ToString();
                     data.propertyName = dt.Rows[0].ItemArray[1].ToString();
                     if (cardId != "")
@@ -494,13 +513,11 @@ namespace pasori
 
                     if (data.propertyAlcoholFlag)
                     {
-                        data.propertyName = textBox2.Text;
                         mainTab.SelectedTab = confirmTab;
                     }
                     else
                     {
                         mainTab.SelectedTab = healthCheck;
-                        data.propertyName = textBox2.Text;
                         //readInformation.Enabled = true;
                     }
 
@@ -509,6 +526,29 @@ namespace pasori
            
             #endregion
         }
+        private void toFirstTab_Tick(object sender, EventArgs e)
+        {
+
+
+            //データ,テキストボックス、selectedCar、categoryを初期化する
+            data = new Status();
+
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            selectedCar = null;
+            category = "";
+            radioButton1.Checked = true;
+            before.Checked = true;
+
+            toFirstTab.Enabled = false;
+            mainTab.SelectedTab = firstTab;
+        }
+
+        #endregion
 
         #region "2"
         //2 次のページに進む
@@ -552,7 +592,7 @@ namespace pasori
             if(e.KeyChar == (char)Keys.Enter)
             {
                 //基本の部分のクエリを取得する
-                string query = new StreamReader(@"../../sql/getNameByCode.txt").ReadToEnd();
+                string query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/getNameByCode.txt").ReadToEnd();
 
                 //読み取った情報に置き換える
                 query = query.Replace("1086", textBox1.Text);
@@ -627,7 +667,7 @@ namespace pasori
             if (e.KeyChar == (char)Keys.Enter)
             {
                 //基本の部分のクエリを取得する
-                string query = new StreamReader(@"../../sql/getNameByCode.txt").ReadToEnd();
+                string query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/getNameByCode.txt").ReadToEnd();
 
                 //読み取った情報に置き換える
                 query = query.Replace("1086", textBox3.Text);
@@ -645,7 +685,7 @@ namespace pasori
                     return;
                 }
 
-                textBox4.Text = dt.Rows[0].ItemArray[0].ToString();
+                textBox4.Text = dt.Rows[0].ItemArray[3].ToString();
             }
 
             dt.Clear();
@@ -696,6 +736,7 @@ namespace pasori
                     
                     //立会人のカードを読み取るTabに移動する
                     mainTab.SelectedTab = getWitnessInformation;
+                    return;
                 }
 
                 //コードで入力された場合、対面ではないのでフラグを立てる
@@ -727,7 +768,7 @@ namespace pasori
                 {
                     //立会人のカードを読み取るTabに移動する
                     mainTab.SelectedTab = getWitnessInformation;
-
+                    return;
                 }
 
                 //コードで入力された場合、対面ではないのでフラグを立てる
@@ -745,6 +786,13 @@ namespace pasori
         }
 
         #endregion
+
+        //確認者のカード読み取りのところで「戻る」を押した場合
+        private void getWitness_backPage_Click(object sender, EventArgs e)
+        {
+            readInformation.Enabled = false;
+            mainTab.SelectedTab = healthCheck;
+        }
 
 
         //確認ページで「戻る」ボタンを押した場合
@@ -770,28 +818,23 @@ namespace pasori
 
             #region "登録処理
 
+            string query;
             //アルコールフラグが立っていれば対象者No,確認日時,対象者名,確認フラグのみ
             if (data.propertyAlcoholFlag)
             {
-
+                query = replaceSQL.detect(data);
             } else
             {
-                string query = replaceSQL.didntDetect(data);
-                interaction_Access.Interaction(ref dt, query, const_Util.alc);
+                query = replaceSQL.didntDetect(data);
             }
             //
+            interaction_Access.Interaction(ref dt, query, const_Util.alc);
 
-            
 
             #endregion
             mainTab.SelectedTab = lastTab;
         }
 
-        //
-        private void getWitness_backPage_Click(object sender, EventArgs e)
-        {
-            readInformation.Enabled = false;
-            mainTab.SelectedTab = healthCheck;
-        }
+        
     }
 }

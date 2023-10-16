@@ -1,0 +1,2 @@
+﻿select *
+from 警備員マスタ
