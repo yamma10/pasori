@@ -22,9 +22,10 @@ namespace pasori
 
                 Application.Run(new mainForm(ref data));
             }
-            catch
+            catch(Exception e)
             {
-
+                MessageBox.Show(e.Message);
+                return;
             }
                     
 
