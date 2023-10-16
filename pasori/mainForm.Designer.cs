@@ -474,14 +474,14 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel11, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(1065, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(450, 376);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
@@ -499,7 +499,7 @@ namespace pasori
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(309, 144);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(354, 163);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
             // tableLayoutPanel12
@@ -512,12 +512,12 @@ namespace pasori
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel12.Controls.Add(this.button4, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 70);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 79);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(303, 71);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(348, 81);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
             // button4
@@ -526,9 +526,9 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button4.Location = new System.Drawing.Point(215, 3);
+            this.button4.Location = new System.Drawing.Point(246, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 65);
+            this.button4.Size = new System.Drawing.Size(99, 75);
             this.button4.TabIndex = 1;
             this.button4.Text = "次へ";
             this.button4.UseVisualStyleBackColor = true;
@@ -549,7 +549,7 @@ namespace pasori
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(206, 65);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(237, 75);
             this.tableLayoutPanel13.TabIndex = 2;
             // 
             // button6
@@ -558,9 +558,9 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button6.Location = new System.Drawing.Point(3, 35);
+            this.button6.Location = new System.Drawing.Point(3, 40);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 27);
+            this.button6.Size = new System.Drawing.Size(231, 32);
             this.button6.TabIndex = 1;
             this.button6.Text = "総務 加川さん(内線:201)";
             this.button6.UseVisualStyleBackColor = true;
@@ -574,7 +574,7 @@ namespace pasori
             this.button5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button5.Location = new System.Drawing.Point(3, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 26);
+            this.button5.Size = new System.Drawing.Size(231, 31);
             this.button5.TabIndex = 0;
             this.button5.Text = "総務 白津さん(内線:203)";
             this.button5.UseVisualStyleBackColor = true;
@@ -587,15 +587,14 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 0, 1);
             this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 2;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(303, 61);
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(348, 70);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // label8
@@ -607,7 +606,7 @@ namespace pasori
             this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(297, 30);
+            this.label8.Size = new System.Drawing.Size(342, 28);
             this.label8.TabIndex = 0;
             this.label8.Text = "(電話確認者)↓に担当者コードを入力";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -618,19 +617,19 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel15.ColumnCount = 4;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel15.Controls.Add(this.button7, 3, 0);
             this.tableLayoutPanel15.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.textBox4, 2, 0);
             this.tableLayoutPanel15.Controls.Add(this.textBox3, 1, 0);
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 31);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(297, 25);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(342, 36);
             this.tableLayoutPanel15.TabIndex = 1;
             // 
             // button7
@@ -638,9 +637,9 @@ namespace pasori
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(239, 3);
+            this.button7.Location = new System.Drawing.Point(275, 3);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(55, 19);
+            this.button7.Size = new System.Drawing.Size(64, 30);
             this.button7.TabIndex = 3;
             this.button7.Text = "クリア";
             this.button7.UseVisualStyleBackColor = true;
@@ -653,18 +652,16 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 25);
+            this.label9.Size = new System.Drawing.Size(79, 36);
             this.label9.TabIndex = 0;
             this.label9.Text = "担当者名";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox4
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox4.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox4.Location = new System.Drawing.Point(121, 3);
+            this.textBox4.Location = new System.Drawing.Point(156, 8);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(112, 19);
@@ -673,10 +670,8 @@ namespace pasori
             // 
             // textBox3
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(62, 3);
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox3.Location = new System.Drawing.Point(92, 8);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(53, 19);
             this.textBox3.TabIndex = 1;
@@ -864,12 +859,13 @@ namespace pasori
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1534, 665);
+            this.panel1.Size = new System.Drawing.Size(1522, 656);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -880,26 +876,25 @@ namespace pasori
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(50, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1443, 474);
+            this.label1.Size = new System.Drawing.Size(1431, 465);
             this.label1.TabIndex = 1;
             this.label1.Text = "本人のカードをかざしてください";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33555F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.33202F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.33242F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel22, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(76, 665);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 662);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1364, 118);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1524, 118);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -912,12 +907,12 @@ namespace pasori
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel4.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(870, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(917, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(491, 112);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(604, 112);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // button1
@@ -926,9 +921,9 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(346, 3);
+            this.button1.Location = new System.Drawing.Point(425, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 106);
+            this.button1.Size = new System.Drawing.Size(176, 106);
             this.button1.TabIndex = 0;
             this.button1.Text = "次へ";
             this.button1.UseVisualStyleBackColor = true;
@@ -941,15 +936,14 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(337, 106);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(416, 106);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label5
@@ -961,7 +955,7 @@ namespace pasori
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(331, 53);
+            this.label5.Size = new System.Drawing.Size(410, 42);
             this.label5.TabIndex = 0;
             this.label5.Text = "カードキーが無い場合";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -976,12 +970,12 @@ namespace pasori
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel6.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableIfLostCardKey, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 56);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 45);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(331, 47);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 58);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // label6
@@ -991,7 +985,7 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 47);
+            this.label6.Size = new System.Drawing.Size(117, 58);
             this.label6.TabIndex = 3;
             this.label6.Text = "担当者名";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1008,30 +1002,30 @@ namespace pasori
             this.tableIfLostCardKey.Controls.Add(this.textBox1, 0, 0);
             this.tableIfLostCardKey.Controls.Add(this.textBox2, 1, 0);
             this.tableIfLostCardKey.Controls.Add(this.button3, 2, 0);
-            this.tableIfLostCardKey.Location = new System.Drawing.Point(102, 3);
+            this.tableIfLostCardKey.Location = new System.Drawing.Point(126, 3);
             this.tableIfLostCardKey.Name = "tableIfLostCardKey";
             this.tableIfLostCardKey.RowCount = 1;
             this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableIfLostCardKey.Size = new System.Drawing.Size(226, 41);
+            this.tableIfLostCardKey.Size = new System.Drawing.Size(281, 52);
             this.tableIfLostCardKey.TabIndex = 4;
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 11);
+            this.textBox1.Location = new System.Drawing.Point(3, 16);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(61, 19);
+            this.textBox1.Size = new System.Drawing.Size(78, 19);
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(70, 11);
+            this.textBox2.Location = new System.Drawing.Point(87, 16);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(107, 19);
+            this.textBox2.Size = new System.Drawing.Size(134, 19);
             this.textBox2.TabIndex = 1;
             // 
             // button3
@@ -1039,9 +1033,9 @@ namespace pasori
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(183, 3);
+            this.button3.Location = new System.Drawing.Point(227, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 35);
+            this.button3.Size = new System.Drawing.Size(51, 46);
             this.button3.TabIndex = 2;
             this.button3.Text = "クリア";
             this.button3.UseVisualStyleBackColor = true;
@@ -1062,7 +1056,7 @@ namespace pasori
             this.tableLayoutPanel22.RowCount = 1;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(448, 112);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(451, 112);
             this.tableLayoutPanel22.TabIndex = 1;
             // 
             // checkerInformation_back
@@ -1072,7 +1066,7 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkerInformation_back.Location = new System.Drawing.Point(3, 3);
             this.checkerInformation_back.Name = "checkerInformation_back";
-            this.checkerInformation_back.Size = new System.Drawing.Size(143, 106);
+            this.checkerInformation_back.Size = new System.Drawing.Size(144, 106);
             this.checkerInformation_back.TabIndex = 0;
             this.checkerInformation_back.Text = "戻る";
             this.checkerInformation_back.UseVisualStyleBackColor = true;
@@ -1590,13 +1584,11 @@ namespace pasori
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(44, 364);
+            this.label4.Location = new System.Drawing.Point(3, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1443, 54);
+            this.label4.Size = new System.Drawing.Size(1524, 777);
             this.label4.TabIndex = 2;
             this.label4.Text = "登録しました";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1615,7 +1607,7 @@ namespace pasori
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Location = new System.Drawing.Point(4, 1);
+            this.panel4.Location = new System.Drawing.Point(4, -15);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1530, 25);
             this.panel4.TabIndex = 1;

@@ -449,7 +449,7 @@ namespace pasori
                 #endregion
 
                 //基本の部分のクエリを取得する
-                string query = new StreamReader(@"System.IO.Directory.GetCurrentDiegetNameFromCardId.txt").ReadToEnd();
+                string query = new StreamReader(System.IO.Directory.GetCurrentDirectory() + @"/sql/getNameFromCardId.txt").ReadToEnd();
 
                 //読み取った情報に置き換える
                 query = query.Replace("0116060016109B11", cardId);
