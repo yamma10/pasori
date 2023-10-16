@@ -105,7 +105,7 @@ namespace pasori
             this.button15 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.buton14 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.button27 = new System.Windows.Forms.Button();
@@ -1229,7 +1229,7 @@ namespace pasori
             this.tableLayoutPanel23.Controls.Add(this.button15, 0, 1);
             this.tableLayoutPanel23.Controls.Add(this.button12, 0, 0);
             this.tableLayoutPanel23.Controls.Add(this.button13, 1, 0);
-            this.tableLayoutPanel23.Controls.Add(this.buton14, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.button14, 0, 1);
             this.tableLayoutPanel23.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 2;
@@ -1280,19 +1280,19 @@ namespace pasori
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // buton14
+            // button14
             // 
-            this.buton14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buton14.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buton14.Location = new System.Drawing.Point(3, 56);
-            this.buton14.Name = "buton14";
-            this.buton14.Size = new System.Drawing.Size(158, 47);
-            this.buton14.TabIndex = 4;
-            this.buton14.Text = "訪問看護";
-            this.buton14.UseVisualStyleBackColor = true;
-            this.buton14.Click += new System.EventHandler(this.buton14_Click);
+            this.button14.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button14.Location = new System.Drawing.Point(3, 56);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(158, 47);
+            this.button14.TabIndex = 4;
+            this.button14.Text = "訪問看護";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // panel3
             // 
@@ -1766,7 +1766,7 @@ namespace pasori
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button buton14;
+        private System.Windows.Forms.Button button14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
         private System.Windows.Forms.Button healthCheck_backPage;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;

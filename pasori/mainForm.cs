@@ -19,6 +19,7 @@ namespace pasori
         
         List<Car> carList;
         Car selectedCar = null;
+        string category = "";
 
         #region "pasoriAPIで使用する変数の定義"
         uint ret;
@@ -140,6 +141,7 @@ namespace pasori
         //1 車種選択_病院クリック
         private void button12_Click(object sender, EventArgs e)
         {
+            category = button12.Text;
             int num = 16;
             while(num <= 27)
             {
@@ -174,6 +176,7 @@ namespace pasori
         //1 車種選択_デイケアクリック
         private void button13_Click(object sender, EventArgs e)
         {
+            category = button13.Text;
             int num = 16;
             while (num <= 27)
             {
@@ -205,8 +208,9 @@ namespace pasori
             }
         }
         //1 車種選択_訪問看護クリック
-        private void buton14_Click(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e)
         {
+            category = button14.Text;
             int num = 16;
             while (num <= 27)
             {
@@ -241,6 +245,7 @@ namespace pasori
         //1 車種選択_その他クリック
         private void button15_Click(object sender, EventArgs e)
         {
+            category = button15.Text;
             int num = 16;
             while (num <= 27)
             {
@@ -269,14 +274,24 @@ namespace pasori
             });
         }
 
+       
         //1 異常なしボタンクリック
         private void okButton_Click(object sender, EventArgs e)
         {
 
             if (selectedCar == null)
             {
-                MessageBox.Show("車種が選択されていません");
-                return;
+                //カテゴリーがその他の場合、車種の選択はいらない
+                if (category == null)
+                {
+                    MessageBox.Show("車種が選択されていません");
+                    return;
+                }
+                data.propertyCarNumber = "その他";
+            } else
+            {
+                data.propertyCarName = selectedCar.name;
+                data.propertyCarNumber = selectedCar.number;
             }
 
             if (before.Checked)
@@ -292,10 +307,6 @@ namespace pasori
             //カードを読み取るTabに移動する
             mainTab.SelectedTab = getCheckerInformation;
 
-            data.propertyCarName = selectedCar.name;
-            data.propertyCarNumber = selectedCar.number;
-
-            dt.Clear();
         }
 
         //1 異常ありボタンクリック
@@ -323,32 +334,47 @@ namespace pasori
             if (mainTab.SelectedTab == confirmTab)
             {
                 textBox6.Text = "";
-                if(data.propertyAlcoholFlag)
+                textBox6.Text = textBox6.Text + "対象者No: " + data.propertyCode + "\r\n";
+                textBox6.Text = textBox6.Text + "対象者名: " + data.propertyName + "\r\n";
+                if (data.propertyAlcoholFlag)
                 {
-                    textBox6.Text = textBox6.Text + "検出者名: " + data.propertyName + "\r\n";
                     textBox6.Text = textBox6.Text + "アルコールチェック: 異常あり\r\n";
                 } else
                 {
-                    if(data.propertyDriveStatus)
+                    textBox6.Text = textBox6.Text + "確認者No: " + data.propertyWitnessCode + "\r\n";
+                    textBox6.Text = textBox6.Text + "確認者名: " + data.propertyWitnessName + "\r\n";
+                    textBox6.Text = textBox6.Text + "アルコールチェック: 異常なし\r\n";
+                    //確認方法
+                    if (data.propertyCheckMethod)
+                    {
+                        //電話
+                        textBox6.Text = textBox6.Text + "確認方法: 電話\r\n";
+                    }
+                    else
+                    {
+                        //対面
+                        textBox6.Text = textBox6.Text + "確認方法: 対面\r\n";
+                    }
+                    //体調
+                    if (data.propertyPhysicalCondition)
+                    {
+                        textBox6.Text = textBox6.Text + "体調: 悪い" + "\r\n";
+                        textBox6.Text = textBox6.Text + "コメント\r\n" + data.propertyComment + "\r\n";
+                    }
+                    else
+                    {
+                        textBox6.Text = textBox6.Text + "体調: 良い" + "\r\n";
+                    }
+
+                    if (data.propertyDriveStatus)
                     {
                         textBox6.Text = textBox6.Text + "状態: 運転後" + "\r\n";
                     } else
                     {
                         textBox6.Text = textBox6.Text + "状態: 運転前" + "\r\n";
                     }
-                    
-                    textBox6.Text = textBox6.Text + "運転者名: " + data.propertyName + "\r\n";
                     textBox6.Text = textBox6.Text + "車ナンバー: " + data.propertyCarNumber + "\r\n";
-                    textBox6.Text = textBox6.Text + "車種: " + data.propertyCarName + "\r\n";
-                    textBox6.Text = textBox6.Text + "立会人: " + data.propertyWitnessName + "\r\n";
-                    if(data.propertyPhysicalCondition)
-                    {
-                        textBox6.Text = textBox6.Text + "体調: 悪い" + "\r\n";
-                        textBox6.Text = textBox6.Text + "コメント:\r\n" + data.propertyComment + "\r\n";
-                    } else
-                    {
-                        textBox6.Text = textBox6.Text + "体調: 良い" + "\r\n";
-                    }
+                    
                     
                 }
                 
@@ -493,13 +519,14 @@ namespace pasori
             {
                 if(data.propertyAlcoholFlag)
                 {
+                    data.propertyCode = textBox1.Text;
                     data.propertyName = textBox2.Text;
                     mainTab.SelectedTab = confirmTab;
                 } else
                 {
-                    mainTab.SelectedTab = healthCheck;
+                    data.propertyCode = textBox1.Text;
                     data.propertyName = textBox2.Text;
-                    //readInformation.Enabled = true;
+                    mainTab.SelectedTab = healthCheck;
                 }
                 
             } else
@@ -512,6 +539,8 @@ namespace pasori
         //2　前のページに戻る
         private void checkerInformation_back_Click(object sender, EventArgs e)
         {
+            //タイマーイベントを止める
+            readInformation.Enabled = true;
             mainTab.SelectedTab = firstTab;
         }
 
@@ -628,6 +657,7 @@ namespace pasori
         private void button8_Click(object sender, EventArgs e)
         {
             textBox5.Text = textBox5.Text + "顔色が悪い\r\n";
+            data.propertyComplexion = true;
         }
 
         //3 熱があるをクリック
@@ -658,16 +688,22 @@ namespace pasori
                 
 
                 data.propertyPhysicalCondition = false;
-                data.propertyWitnessName = textBox4.Text;
+                
 
                 //立会人が入力されていない場合
                 if (textBox3.Text == "" || textBox4.Text == "")
                 {
+                    
                     //立会人のカードを読み取るTabに移動する
                     mainTab.SelectedTab = getWitnessInformation;
                 }
 
-                //立会人のカードを読み取るTabに移動する
+                //コードで入力された場合、対面ではないのでフラグを立てる
+                data.propertyCheckMethod = true;
+                //名前と職員ｺｰﾄﾞを保存する
+                data.propertyWitnessCode = textBox3.Text;
+                data.propertyWitnessName = textBox4.Text;
+                //確認Tabに移動する
                 mainTab.SelectedTab = confirmTab;
             }
             else
@@ -680,7 +716,10 @@ namespace pasori
                 }
                 
                 data.propertyPhysicalCondition = true;
+                //名前と職員ｺｰﾄﾞを保存する
+                data.propertyWitnessCode = textBox3.Text;
                 data.propertyWitnessName = textBox4.Text;
+                //コメントの保存
                 data.propertyComment = textBox5.Text;
 
                 //立会人が入力されていない場合
@@ -691,7 +730,9 @@ namespace pasori
 
                 }
 
-                //立会人のカードを読み取るTabに移動する
+                //コードで入力された場合、対面ではないのでフラグを立てる
+                data.propertyCheckMethod = true;
+                //確認Tabに移動する
                 mainTab.SelectedTab = confirmTab;
             }
         }
@@ -710,7 +751,16 @@ namespace pasori
 
         private void confirm_backPage_Click(object sender, EventArgs e)
         {
-            mainTab.SelectedTab = healthCheck;
+            readInformation.Enabled = true;
+            //アルコールチェックで異常がある場合、getCheckerInformationに戻る
+            if (data.propertyAlcoholFlag)
+            {
+                mainTab.SelectedTab = getCheckerInformation;
+            } else
+            {
+                mainTab.SelectedTab = healthCheck;
+            }
+            
         }
 
         //確認ページで「登録する」ボタンを押した場合
@@ -718,14 +768,26 @@ namespace pasori
         private void confirm_register_Click(object sender, EventArgs e)
         {
 
-            //ここに登録処理
-                
+            #region "登録処理
+
+            //アルコールフラグが立っていれば対象者No,確認日時,対象者名,確認フラグのみ
+            if (data.propertyAlcoholFlag)
+            {
+
+            } else
+            {
+                string query = replaceSQL.didntDetect(data);
+                interaction_Access.Interaction(ref dt, query, const_Util.alc);
+            }
             //
 
+            
+
+            #endregion
             mainTab.SelectedTab = lastTab;
         }
 
-
+        //
         private void getWitness_backPage_Click(object sender, EventArgs e)
         {
             readInformation.Enabled = false;
