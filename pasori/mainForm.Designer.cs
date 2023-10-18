@@ -335,13 +335,11 @@ namespace pasori
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("MS UI Gothic", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(44, 364);
+            this.label10.Location = new System.Drawing.Point(3, 3);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1443, 54);
+            this.label10.Size = new System.Drawing.Size(1524, 777);
             this.label10.TabIndex = 2;
             this.label10.Text = "立会人のカードをかざしてください";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -458,7 +456,7 @@ namespace pasori
             this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.radioButton2.ForeColor = System.Drawing.Color.Blue;
+            this.radioButton2.ForeColor = System.Drawing.Color.Crimson;
             this.radioButton2.Location = new System.Drawing.Point(528, 3);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(519, 352);
@@ -516,7 +514,7 @@ namespace pasori
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(348, 81);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
@@ -691,8 +689,8 @@ namespace pasori
             this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 391);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel17.Size = new System.Drawing.Size(1518, 383);
             this.tableLayoutPanel17.TabIndex = 1;
             // 
@@ -710,8 +708,8 @@ namespace pasori
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(500, 185);
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 204F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(500, 204);
             this.tableLayoutPanel18.TabIndex = 0;
             this.tableLayoutPanel18.Visible = false;
             // 
@@ -732,7 +730,7 @@ namespace pasori
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(144, 179);
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(144, 198);
             this.tableLayoutPanel19.TabIndex = 0;
             // 
             // button10
@@ -740,9 +738,9 @@ namespace pasori
             this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.Location = new System.Drawing.Point(3, 121);
+            this.button10.Location = new System.Drawing.Point(3, 135);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(138, 55);
+            this.button10.Size = new System.Drawing.Size(138, 60);
             this.button10.TabIndex = 2;
             this.button10.Text = "外傷がある";
             this.button10.UseVisualStyleBackColor = true;
@@ -753,9 +751,9 @@ namespace pasori
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Location = new System.Drawing.Point(3, 62);
+            this.button9.Location = new System.Drawing.Point(3, 69);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(138, 53);
+            this.button9.Size = new System.Drawing.Size(138, 60);
             this.button9.TabIndex = 1;
             this.button9.Text = "熱がある";
             this.button9.UseVisualStyleBackColor = true;
@@ -768,7 +766,7 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.Location = new System.Drawing.Point(3, 3);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(138, 53);
+            this.button8.Size = new System.Drawing.Size(138, 60);
             this.button8.TabIndex = 0;
             this.button8.Text = "顔色が悪い";
             this.button8.UseVisualStyleBackColor = true;
@@ -789,13 +787,13 @@ namespace pasori
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(344, 179);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(344, 198);
             this.tableLayoutPanel16.TabIndex = 1;
             // 
             // button11
             // 
             this.button11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button11.Location = new System.Drawing.Point(3, 3);
+            this.button11.Location = new System.Drawing.Point(3, 4);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 20);
             this.button11.TabIndex = 1;
@@ -808,10 +806,10 @@ namespace pasori
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(3, 29);
+            this.textBox5.Location = new System.Drawing.Point(3, 32);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(338, 147);
+            this.textBox5.Size = new System.Drawing.Size(338, 163);
             this.textBox5.TabIndex = 2;
             // 
             // tableLayoutPanel25
@@ -823,12 +821,12 @@ namespace pasori
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel25.Controls.Add(this.healthCheck_backPage, 0, 1);
-            this.tableLayoutPanel25.Location = new System.Drawing.Point(3, 194);
+            this.tableLayoutPanel25.Location = new System.Drawing.Point(3, 213);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
             this.tableLayoutPanel25.RowCount = 2;
             this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel25.Size = new System.Drawing.Size(500, 186);
+            this.tableLayoutPanel25.Size = new System.Drawing.Size(500, 167);
             this.tableLayoutPanel25.TabIndex = 1;
             // 
             // healthCheck_backPage
@@ -836,9 +834,9 @@ namespace pasori
             this.healthCheck_backPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.healthCheck_backPage.Location = new System.Drawing.Point(3, 96);
+            this.healthCheck_backPage.Location = new System.Drawing.Point(3, 86);
             this.healthCheck_backPage.Name = "healthCheck_backPage";
-            this.healthCheck_backPage.Size = new System.Drawing.Size(119, 87);
+            this.healthCheck_backPage.Size = new System.Drawing.Size(119, 78);
             this.healthCheck_backPage.TabIndex = 0;
             this.healthCheck_backPage.Text = "戻る";
             this.healthCheck_backPage.UseVisualStyleBackColor = true;
@@ -974,7 +972,7 @@ namespace pasori
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(410, 58);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
@@ -1006,7 +1004,7 @@ namespace pasori
             this.tableIfLostCardKey.Name = "tableIfLostCardKey";
             this.tableIfLostCardKey.RowCount = 1;
             this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableIfLostCardKey.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableIfLostCardKey.Size = new System.Drawing.Size(281, 52);
             this.tableIfLostCardKey.TabIndex = 4;
             // 
@@ -1098,8 +1096,8 @@ namespace pasori
             this.mainTableTop.Name = "mainTableTop";
             this.mainTableTop.RowCount = 3;
             this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.mainTableTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainTableTop.Size = new System.Drawing.Size(1483, 321);
             this.mainTableTop.TabIndex = 0;
             // 
@@ -1124,7 +1122,7 @@ namespace pasori
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Location = new System.Drawing.Point(3, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1477, 90);
+            this.groupBox1.Size = new System.Drawing.Size(1477, 58);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -1142,15 +1140,15 @@ namespace pasori
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1471, 72);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1471, 40);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // after
             // 
             this.after.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.after.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(128)));
-            this.after.Location = new System.Drawing.Point(738, 23);
+            this.after.Location = new System.Drawing.Point(738, 7);
             this.after.Name = "after";
             this.after.Size = new System.Drawing.Size(319, 26);
             this.after.TabIndex = 3;
@@ -1162,7 +1160,7 @@ namespace pasori
             this.before.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.before.Checked = true;
             this.before.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(128)));
-            this.before.Location = new System.Drawing.Point(639, 24);
+            this.before.Location = new System.Drawing.Point(639, 8);
             this.before.Name = "before";
             this.before.Size = new System.Drawing.Size(93, 23);
             this.before.TabIndex = 2;
@@ -1180,11 +1178,11 @@ namespace pasori
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 200);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 172);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1477, 112);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1477, 136);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // label2
@@ -1194,7 +1192,7 @@ namespace pasori
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(3, 47);
+            this.label2.Location = new System.Drawing.Point(3, 59);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.label2.Size = new System.Drawing.Size(195, 17);
@@ -1210,7 +1208,7 @@ namespace pasori
             this.panel2.Controls.Add(this.tableLayoutPanel23);
             this.panel2.Location = new System.Drawing.Point(204, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(329, 106);
+            this.panel2.Size = new System.Drawing.Size(329, 130);
             this.panel2.TabIndex = 12;
             // 
             // tableLayoutPanel23
@@ -1230,7 +1228,7 @@ namespace pasori
             this.tableLayoutPanel23.RowCount = 2;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(329, 106);
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(329, 130);
             this.tableLayoutPanel23.TabIndex = 11;
             // 
             // button15
@@ -1239,9 +1237,9 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button15.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button15.Location = new System.Drawing.Point(167, 56);
+            this.button15.Location = new System.Drawing.Point(167, 68);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(159, 47);
+            this.button15.Size = new System.Drawing.Size(159, 59);
             this.button15.TabIndex = 5;
             this.button15.Text = "その他";
             this.button15.UseVisualStyleBackColor = true;
@@ -1255,7 +1253,7 @@ namespace pasori
             this.button12.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button12.Location = new System.Drawing.Point(3, 3);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(158, 47);
+            this.button12.Size = new System.Drawing.Size(158, 59);
             this.button12.TabIndex = 2;
             this.button12.Text = "病院";
             this.button12.UseVisualStyleBackColor = true;
@@ -1269,7 +1267,7 @@ namespace pasori
             this.button13.Font = new System.Drawing.Font("MS UI Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button13.Location = new System.Drawing.Point(167, 3);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(159, 47);
+            this.button13.Size = new System.Drawing.Size(159, 59);
             this.button13.TabIndex = 3;
             this.button13.Text = "デイケア";
             this.button13.UseVisualStyleBackColor = true;
@@ -1281,9 +1279,9 @@ namespace pasori
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button14.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button14.Location = new System.Drawing.Point(3, 56);
+            this.button14.Location = new System.Drawing.Point(3, 68);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(158, 47);
+            this.button14.Size = new System.Drawing.Size(158, 59);
             this.button14.TabIndex = 4;
             this.button14.Text = "訪問看護";
             this.button14.UseVisualStyleBackColor = true;
@@ -1297,7 +1295,7 @@ namespace pasori
             this.panel3.Controls.Add(this.tableLayoutPanel24);
             this.panel3.Location = new System.Drawing.Point(539, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(935, 106);
+            this.panel3.Size = new System.Drawing.Size(935, 130);
             this.panel3.TabIndex = 13;
             // 
             // tableLayoutPanel24
@@ -1329,7 +1327,7 @@ namespace pasori
             this.tableLayoutPanel24.RowCount = 2;
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(932, 103);
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(932, 127);
             this.tableLayoutPanel24.TabIndex = 12;
             // 
             // button27
@@ -1340,9 +1338,9 @@ namespace pasori
             this.button27.AutoSize = true;
             this.button27.Enabled = false;
             this.button27.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button27.Location = new System.Drawing.Point(778, 54);
+            this.button27.Location = new System.Drawing.Point(778, 66);
             this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(151, 46);
+            this.button27.Size = new System.Drawing.Size(151, 58);
             this.button27.TabIndex = 11;
             this.button27.UseVisualStyleBackColor = true;
             this.button27.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1355,9 +1353,9 @@ namespace pasori
             this.button26.AutoSize = true;
             this.button26.Enabled = false;
             this.button26.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button26.Location = new System.Drawing.Point(623, 54);
+            this.button26.Location = new System.Drawing.Point(623, 66);
             this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(149, 46);
+            this.button26.Size = new System.Drawing.Size(149, 58);
             this.button26.TabIndex = 10;
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1370,9 +1368,9 @@ namespace pasori
             this.button25.AutoSize = true;
             this.button25.Enabled = false;
             this.button25.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button25.Location = new System.Drawing.Point(468, 54);
+            this.button25.Location = new System.Drawing.Point(468, 66);
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(149, 46);
+            this.button25.Size = new System.Drawing.Size(149, 58);
             this.button25.TabIndex = 9;
             this.button25.UseVisualStyleBackColor = true;
             this.button25.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1385,9 +1383,9 @@ namespace pasori
             this.button24.AutoSize = true;
             this.button24.Enabled = false;
             this.button24.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button24.Location = new System.Drawing.Point(313, 54);
+            this.button24.Location = new System.Drawing.Point(313, 66);
             this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(149, 46);
+            this.button24.Size = new System.Drawing.Size(149, 58);
             this.button24.TabIndex = 8;
             this.button24.UseVisualStyleBackColor = true;
             this.button24.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1400,9 +1398,9 @@ namespace pasori
             this.button23.AutoSize = true;
             this.button23.Enabled = false;
             this.button23.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button23.Location = new System.Drawing.Point(158, 54);
+            this.button23.Location = new System.Drawing.Point(158, 66);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(149, 46);
+            this.button23.Size = new System.Drawing.Size(149, 58);
             this.button23.TabIndex = 7;
             this.button23.UseVisualStyleBackColor = true;
             this.button23.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1415,9 +1413,9 @@ namespace pasori
             this.button22.AutoSize = true;
             this.button22.Enabled = false;
             this.button22.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button22.Location = new System.Drawing.Point(3, 54);
+            this.button22.Location = new System.Drawing.Point(3, 66);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(149, 46);
+            this.button22.Size = new System.Drawing.Size(149, 58);
             this.button22.TabIndex = 6;
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1432,7 +1430,7 @@ namespace pasori
             this.button21.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button21.Location = new System.Drawing.Point(778, 3);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(151, 45);
+            this.button21.Size = new System.Drawing.Size(151, 57);
             this.button21.TabIndex = 5;
             this.button21.UseVisualStyleBackColor = true;
             this.button21.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1447,7 +1445,7 @@ namespace pasori
             this.button20.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button20.Location = new System.Drawing.Point(623, 3);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(149, 45);
+            this.button20.Size = new System.Drawing.Size(149, 57);
             this.button20.TabIndex = 4;
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1462,7 +1460,7 @@ namespace pasori
             this.button19.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button19.Location = new System.Drawing.Point(468, 3);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(149, 45);
+            this.button19.Size = new System.Drawing.Size(149, 57);
             this.button19.TabIndex = 3;
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1477,7 +1475,7 @@ namespace pasori
             this.button18.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button18.Location = new System.Drawing.Point(313, 3);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(149, 45);
+            this.button18.Size = new System.Drawing.Size(149, 57);
             this.button18.TabIndex = 2;
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1492,7 +1490,7 @@ namespace pasori
             this.button17.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button17.Location = new System.Drawing.Point(158, 3);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(149, 45);
+            this.button17.Size = new System.Drawing.Size(149, 57);
             this.button17.TabIndex = 1;
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1508,7 +1506,7 @@ namespace pasori
             this.button16.Font = new System.Drawing.Font("MS UI Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button16.Location = new System.Drawing.Point(3, 3);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(149, 45);
+            this.button16.Size = new System.Drawing.Size(149, 57);
             this.button16.TabIndex = 0;
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.carSelectedEvent);
@@ -1527,7 +1525,7 @@ namespace pasori
             this.mainTableBottom.Name = "mainTableBottom";
             this.mainTableBottom.RowCount = 1;
             this.mainTableBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainTableBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 457F));
+            this.mainTableBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 430F));
             this.mainTableBottom.Size = new System.Drawing.Size(1203, 431);
             this.mainTableBottom.TabIndex = 0;
             // 
@@ -1607,7 +1605,7 @@ namespace pasori
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Location = new System.Drawing.Point(4, -4);
+            this.panel4.Location = new System.Drawing.Point(4, -1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1530, 25);
             this.panel4.TabIndex = 1;

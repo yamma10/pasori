@@ -333,7 +333,9 @@ namespace pasori
                 readInformation.Enabled = true;
             } else if(mainTab.SelectedTab == confirmTab)
             {
+                DateTime dateTime = DateTime.Now;
                 textBox6.Text = "";
+                textBox6.Text = textBox6.Text + "登録時間: " + dateTime.Year + "年" + dateTime.Month + "月" + dateTime.Day + "日" + dateTime.Hour + "時" + dateTime.Minute + "分\r\n";
                 textBox6.Text = textBox6.Text + "対象者No: " + data.propertyCode + "\r\n";
                 textBox6.Text = textBox6.Text + "対象者名: " + data.propertyName + "\r\n";
                 if (data.propertyAlcoholFlag)
@@ -376,6 +378,7 @@ namespace pasori
                         textBox6.Text = textBox6.Text + "状態: 運転前" + "\r\n";
                     }
                     textBox6.Text = textBox6.Text + "車ナンバー: " + data.propertyCarNumber + "\r\n";
+                    textBox6.Text = textBox6.Text + "車種: " + data.propertyCarName + "\r\n";
 
 
                 }
@@ -493,33 +496,57 @@ namespace pasori
                             MessageBox.Show("確認者と対象者が同一人物です");
                             readInformation.Enabled = true;
                             return;
+                        } else
+                        {
+                            data.propertyWitnessCode = dt.Rows[0].ItemArray[0].ToString();
+                            data.propertyWitnessName = dt.Rows[0].ItemArray[1].ToString();
+                            if (cardId != "")
+                            {
+                                System.IO.Stream stream = Properties.Resources.coin;
+
+                                System.Media.SoundPlayer player = new System.Media.SoundPlayer(stream);
+
+                                player.PlaySync();
+
+                                player.Dispose();
+                            }
+
+                            mainTab.SelectedTab = confirmTab;
                         }
                         
                         
-                    }
-
-                    data.propertyCode = dt.Rows[0].ItemArray[0].ToString();
-                    data.propertyName = dt.Rows[0].ItemArray[1].ToString();
-                    if (cardId != "")
+                    } else
                     {
-                        System.IO.Stream stream = Properties.Resources.coin;
+                        data.propertyCode = dt.Rows[0].ItemArray[0].ToString();
+                        data.propertyName = dt.Rows[0].ItemArray[1].ToString();
+                        if (cardId != "")
+                        {
+                            System.IO.Stream stream = Properties.Resources.coin;
 
-                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(stream);
+                            System.Media.SoundPlayer player = new System.Media.SoundPlayer(stream);
 
-                        player.PlaySync();
+                            player.PlaySync();
 
-                        player.Dispose();
+                            player.Dispose();
+                        }
+
+                        if (data.propertyAlcoholFlag)
+                        {
+                            mainTab.SelectedTab = confirmTab;
+                        }
+                        else
+                        {
+                            mainTab.SelectedTab = healthCheck;
+                            //readInformation.Enabled = true;
+                        }
                     }
 
-                    if (data.propertyAlcoholFlag)
-                    {
-                        mainTab.SelectedTab = confirmTab;
-                    }
-                    else
-                    {
-                        mainTab.SelectedTab = healthCheck;
-                        //readInformation.Enabled = true;
-                    }
+                    
+                    
+
+
+
+                    
 
                 }
             }
@@ -702,7 +729,7 @@ namespace pasori
                     return;
                 }
 
-                textBox4.Text = dt.Rows[0].ItemArray[3].ToString();
+                textBox4.Text = dt.Rows[0].ItemArray[0].ToString();
             }
 
             dt.Clear();
@@ -770,7 +797,12 @@ namespace pasori
             }
             else
             {
-                //立会人が入力されていない場合
+                //異常ありの場合
+                data.propertyPhysicalCondition = true;
+                //コメントの保存
+                data.propertyComment = textBox5.Text;
+
+                //立会人が入力されていない
                 if (textBox3.Text == "" || textBox4.Text == "")
                 {
                     //立会人のカードを読み取るTabに移動する
@@ -788,16 +820,10 @@ namespace pasori
                     MessageBox.Show("症状を入力してください");
                     return;
                 }
-                
-                data.propertyPhysicalCondition = true;
                 //名前と職員ｺｰﾄﾞを保存する
                 data.propertyWitnessCode = textBox3.Text;
                 data.propertyWitnessName = textBox4.Text;
-                //コメントの保存
-                data.propertyComment = textBox5.Text;
-
                 
-
                 //コードで入力された場合、対面ではないのでフラグを立てる
                 data.propertyCheckMethod = true;
                 //確認Tabに移動する
