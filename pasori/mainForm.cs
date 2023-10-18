@@ -544,6 +544,23 @@ namespace pasori
             radioButton1.Checked = true;
             before.Checked = true;
 
+            //最初のページの車種選択のボタンをenabledにする
+            int i = 0;
+            //車を記載するボタンが16から27までなので
+            int num = 16;
+            while (i < carList.Count && num <= 27)
+            {
+                Control[] cs = this.Controls.Find("button" + num.ToString(), true);
+
+                if (cs.Length > 0)
+                {
+                    ((Button)cs[0]).Enabled = false;
+                }
+
+                num++;
+                i++;
+            }
+
             toFirstTab.Enabled = false;
             mainTab.SelectedTab = firstTab;
         }
@@ -646,18 +663,18 @@ namespace pasori
             tableLayoutPanel18.Visible = true;
 
         }
-        //3 白津さんクリック
+        //3 総務１クリック
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox3.Text = "1055";
-            textBox4.Text = "白津 美夏";
+            textBox3.Text = const_Util.soumuCode1;
+            textBox4.Text = const_Util.soumu1;
         }
 
-        //3 加川さんクリック
+        //3 総務２ クリック
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox3.Text = "798";
-            textBox4.Text = "加川 智子";
+            textBox3.Text = const_Util.soumuCode2;
+            textBox4.Text = const_Util.soumu2;
         }
 
         //3 職員ｺｰﾄﾞから名前取得
@@ -737,6 +754,10 @@ namespace pasori
                     //立会人のカードを読み取るTabに移動する
                     mainTab.SelectedTab = getWitnessInformation;
                     return;
+                } else if(textBox4.Text == data.propertyName)
+                {
+                    MessageBox.Show("確認者と対象者が同一人物です");
+                    return;
                 }
 
                 //コードで入力された場合、対面ではないのでフラグを立てる
@@ -749,6 +770,18 @@ namespace pasori
             }
             else
             {
+                //立会人が入力されていない場合
+                if (textBox3.Text == "" || textBox4.Text == "")
+                {
+                    //立会人のカードを読み取るTabに移動する
+                    mainTab.SelectedTab = getWitnessInformation;
+                    return;
+                }else if (textBox4.Text == data.propertyName)
+                {
+                    MessageBox.Show("確認者と対象者が同一人物です");
+                    return;
+                }
+
                 //異常があるのにコメントが入力されていない場合
                 if (textBox5.Text == "")
                 {
@@ -763,13 +796,7 @@ namespace pasori
                 //コメントの保存
                 data.propertyComment = textBox5.Text;
 
-                //立会人が入力されていない場合
-                if (textBox3.Text == "" || textBox4.Text == "")
-                {
-                    //立会人のカードを読み取るTabに移動する
-                    mainTab.SelectedTab = getWitnessInformation;
-                    return;
-                }
+                
 
                 //コードで入力された場合、対面ではないのでフラグを立てる
                 data.propertyCheckMethod = true;

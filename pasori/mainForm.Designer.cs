@@ -1607,7 +1607,7 @@ namespace pasori
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Location = new System.Drawing.Point(4, -15);
+            this.panel4.Location = new System.Drawing.Point(4, -4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1530, 25);
             this.panel4.TabIndex = 1;
