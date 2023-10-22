@@ -1593,7 +1593,6 @@ namespace pasori
             // 
             // readInformation
             // 
-            this.readInformation.Interval = 1000;
             this.readInformation.Tick += new System.EventHandler(this.readInformation_Tick);
             // 
             // toFirstTab
