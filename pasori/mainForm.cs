@@ -61,13 +61,13 @@ namespace pasori
                 tmpCar.name = dt.Rows[i].ItemArray[1].ToString();
                 tmpCar.number = dt.Rows[i].ItemArray[0].ToString();
 
-                Control[] cs = this.Controls.Find("button" + num.ToString(), true);
+                //Control[] cs = this.Controls.Find("button" + num.ToString(), true);
 
-                if (cs.Length > 0)
-                {
-                    ((Button)cs[0]).Text += dt.Rows[i].ItemArray[1].ToString() + "\r\n";
-                    ((Button)cs[0]).Text += dt.Rows[i].ItemArray[0].ToString();
-                }
+                //if (cs.Length > 0)
+                //{
+                //    ((Button)cs[0]).Text += dt.Rows[i].ItemArray[1].ToString() + "\r\n";
+                //    ((Button)cs[0]).Text += dt.Rows[i].ItemArray[0].ToString();
+                //}
 
                 carList.Add(tmpCar);
 
@@ -143,36 +143,7 @@ namespace pasori
         //1 車種選択_病院クリック
         private void button12_Click(object sender, EventArgs e)
         {
-            category = button12.Text;
-            int num = 16;
-            while(num <= 27)
-            {
-                Control[] cs = this.Controls.Find("button" + num.ToString(), true);
-
-                if (cs.Length > 0)
-                {
-                    if(((Button)cs[0]).Text == "")
-                    {
-                        return;
-                    }
-                    carList.ForEach(item =>
-                    {
-                        if(((Button)cs[0]).Text.Contains(item.name) && ((Button)cs[0]).Text.Contains(item.number))
-                        {
-                            if (item.category == "院内")
-                            {
-                                ((Button)cs[0]).Enabled = true;
-                            }
-                            else
-                            {
-                                ((Button)cs[0]).Enabled = false;
-                            }
-                        }
-                        
-                    });
-                }
-                num++;
-            }
+            setCar("院内");
         }
 
         //1 車種選択_デイケアクリック
@@ -212,36 +183,7 @@ namespace pasori
         //1 車種選択_訪問看護クリック
         private void button14_Click(object sender, EventArgs e)
         {
-            category = button14.Text;
-            int num = 16;
-            while (num <= 27)
-            {
-                Control[] cs = this.Controls.Find("button" + num.ToString(), true);
-
-                if (cs.Length > 0)
-                {
-                    if (((Button)cs[0]).Text == "")
-                    {
-                        return;
-                    }
-                    carList.ForEach(item =>
-                    {
-                        if (((Button)cs[0]).Text.Contains(item.name) && ((Button)cs[0]).Text.Contains(item.number))
-                        {
-                            if (item.category == "訪問看護")
-                            {
-                                ((Button)cs[0]).Enabled = true;
-                            }
-                            else
-                            {
-                                ((Button)cs[0]).Enabled = false;
-                            }
-                        }
-
-                    });
-                }
-                num++;
-            }
+            setCar("訪問看護");
         }
 
         //1 車種選択_その他クリック
@@ -259,6 +201,51 @@ namespace pasori
                 }
                 num++;
             }
+        }
+
+        //車種選択データ取得
+        //病院,訪問などの情報を渡してボタンにセットする
+        private void setCar(string str)
+        {
+            int num = 16;
+            string prev = "";
+            //lambda式 car.categoryと引数が等しい全てのcarを取得する
+            List<Car> tmp = carList.FindAll(car => car.category == str);
+
+            
+            tmp.ForEach(item =>
+            {
+                //コントロールを取得
+                Control[] cs = this.Controls.Find("button" + num.ToString(), true);
+                //テキストを空にする
+                ((Button)cs[0]).Text = "";
+                //enabledをfalseにする
+                ((Button)cs[0]).Enabled = false;
+                //値をセットしてクリックできるようにする
+                ((Button)cs[0]).Text = item.name + "\r\n";
+                ((Button)cs[0]).Text = ((Button)cs[0]).Text + item.number;
+                ((Button)cs[0]).Enabled = true;
+
+                //Buttonの番号をインクリメント
+                num++;
+            });
+
+            if(num <= 27)
+            {
+                while(num <= 27)
+                {
+                    //コントロールを取得
+                    Control[] cs = this.Controls.Find("button" + num.ToString(), true);
+                    //テキストを空にする
+                    ((Button)cs[0]).Text = "";
+                    //enabledをfalseにする
+                    ((Button)cs[0]).Enabled = false;
+
+                    num++;
+                }
+            }
+
+            
         }
 
         #endregion
